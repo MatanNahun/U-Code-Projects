@@ -29,8 +29,11 @@ $("#posts").on("click", ".addCommentButton", function () {
 });
 
 /// removeComment
-// $("#posts").on("click", ".delete-comment", function () {
-//   console.log("delete");
-//     const postId = $(this).closest(".post").attr("id");
-//     const commentToAddId = $(this).attr("id");
-// });
+$("#posts").on("click", ".delete-comment", function () {
+  console.log("delete");
+  const postId = $(this).closest(".post").attr("id");
+  const commentToAddId = $(this).closest(".comments").attr("id");
+  console.log(commentToAddId);
+  tweeterLogic.removeComment(postId, commentToAddId);
+  tweeterView.renderPosts(tweeterLogic.getPosts());
+});
