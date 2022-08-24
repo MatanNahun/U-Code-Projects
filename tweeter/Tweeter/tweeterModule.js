@@ -36,7 +36,7 @@ const tweeterModule = function () {
   };
 
   const getPosts = function () {
-    return _posts;
+    return [..._posts];
   };
 
   const addPost = (post) => {
@@ -79,21 +79,10 @@ const tweeterModule = function () {
   };
 
   return {
-    getPosts: getPosts,
-    addPost: addPost,
-    removePost: removePost,
-    addComment: addComment,
-    removeComment: removeComment,
+    getPosts,
+    addPost,
+    removePost,
+    addComment,
+    removeComment,
   };
 };
-
-const tweeter = tweeterModule();
-
-tweeter.addPost("checkkk222");
-tweeter.removePost("p2");
-tweeter.addComment("p1", "blabla");
-tweeter.removeComment("p1", "c7");
-tweeter.addPost("checkkk224442");
-tweeter.removeComment("p1", "c1");
-
-console.log(tweeter.getPosts());
