@@ -52,11 +52,14 @@ body {
 
 .post-text {
   font-weight: bold;
+  margin: 15px;
+  font-size: large;
 }
 
 .comments {
   margin-left: 10px;
   margin: 10px;
+  font-size: medium;
 }
 
 .delete {
@@ -67,9 +70,12 @@ body {
   padding: 5px;
   border-radius: 3px;
   font-size: 0.8em;
+  float: right;
 }
 
 .delete-comment {
   cursor: pointer;
   color: #e74c3c;
+  float: left;
+  margin: 2px;
 }

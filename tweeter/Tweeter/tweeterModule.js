@@ -40,7 +40,10 @@ const tweeterModule = function () {
   };
 
   const addPost = (post) => {
-    _posts.push({
+    if (post === "") {
+      return;
+    }
+    return _posts.push({
       text: post,
       id: postsIdMechanism(),
       comments: [],
@@ -56,6 +59,9 @@ const tweeterModule = function () {
   };
 
   const addComment = function (postId, string) {
+    if (string === "") {
+      return;
+    }
     for (const index in _posts) {
       if (_posts[index].id === postId) {
         return _posts[index].comments.push({
