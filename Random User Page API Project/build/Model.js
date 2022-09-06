@@ -1,16 +1,35 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 console.log("Model");
 class Model {
     constructor() {
         this.user = new User();
-        this.user.initUser();
+        // this.user.initUser();
         this.pokemonData = new Pokemon();
-        this.pokemonData.initPokemon();
+        // this.pokemonData.initPokemon();
         this.quoteData = new Quote();
-        this.quoteData.initQuote();
+        // this.quoteData.initQuote();
         this.about = new About();
-        this.about.initAbout();
+        // this.about.initAbout();
+    }
+    getAllData() {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield Promise.all([
+                this.user.initUser(),
+                this.pokemonData.initPokemon(),
+                this.quoteData.initQuote(),
+                this.about.initAbout(),
+            ]);
+        });
     }
 }
-const model = new Model();
-console.log(model);
+// const model = new Model();
+// console.log(model);

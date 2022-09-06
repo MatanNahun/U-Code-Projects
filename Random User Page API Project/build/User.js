@@ -11,7 +11,7 @@ class User {
     }
     initUser() {
         var $user = $(this); // get access to user with closure
-        $.ajax({
+        return $.ajax({
             url: "https://randomuser.me/api/?results=7",
             dataType: "json",
             success: function (UserData) {

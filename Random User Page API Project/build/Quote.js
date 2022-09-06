@@ -5,7 +5,7 @@ class Quote {
     }
     initQuote() {
         var $quote = $(this); // get access to model with closure
-        $.ajax({
+        return $.ajax({
             url: "https://api.kanye.rest",
             dataType: "json",
             success: function (kanyeData) {

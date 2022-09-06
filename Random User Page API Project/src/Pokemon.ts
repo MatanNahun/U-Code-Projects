@@ -13,7 +13,7 @@ class Pokemon {
 
   initPokemon() {
     var $pokemon = $(this); // get access to pokemon with closure
-    $.ajax({
+    return $.ajax({
       url: `https://pokeapi.co/api/v2/pokemon/${this.randomID()}/`,
       dataType: "json",
       success: function (pokemonData) {

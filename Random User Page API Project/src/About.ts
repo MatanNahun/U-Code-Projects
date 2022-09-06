@@ -6,7 +6,7 @@ class About {
 
   initAbout() {
     var $about = $(this); // get access to about with closure
-    $.ajax({
+    return $.ajax({
       url: "https://baconipsum.com/api/?type=meat-and-filler",
       dataType: "json",
       success: function (baconData) {
