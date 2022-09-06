@@ -2,17 +2,26 @@ console.log("Render");
 
 class Render {
   renderUser(user: User): void {
-    const source = $("#user-template").html();
-    const template = Handlebars.compile(source);
+    const sourceUserInfo = $("#user-template").html();
+    const template = Handlebars.compile(sourceUserInfo);
 
-    let newHTML = template({
+    let userInfo = template({
       firstName: user.firstName,
       lastName: user.lastName,
       city: user.city,
       state: user.state,
       pictureURL: user.pictureURL,
     });
-    $(".user-container").append(newHTML);
+    $(".user-container").append(userInfo);
+  }
+
+  renderFriends(friends: string[]): void {
+    const sourceFriends = $("#friends-template").html();
+    const template = Handlebars.compile(sourceFriends);
+    for (let friend of friends) {
+      let userFriend = template({ friend });
+      $(".friends").append(userFriend);
+    }
   }
 }
 
