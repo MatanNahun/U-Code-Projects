@@ -19,10 +19,9 @@
   <body>
     <div class="container">
       <script id="user-template" type="text/x-handlebars-template">
-        <p>
-          <span> {{firstName}} </span>
-
-        </p>
+        <span> {{firstName}} {{lastName}} </span>
+        <span> {{city}} {{state}} </span>
+        <img src="{{pictureURL}}" alt="user image" />
       </script>
 
       <div class="user-container"></div>

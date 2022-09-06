@@ -4,7 +4,13 @@ class Render {
     renderUser(user) {
         const source = $("#user-template").html();
         const template = Handlebars.compile(source);
-        let newHTML = template({ firstName: user.firstName });
+        let newHTML = template({
+            firstName: user.firstName,
+            lastName: user.lastName,
+            city: user.city,
+            state: user.state,
+            pictureURL: user.pictureURL,
+        });
         $(".user-container").append(newHTML);
     }
 }
