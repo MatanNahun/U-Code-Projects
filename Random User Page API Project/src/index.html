@@ -18,7 +18,16 @@
 
   <body>
     <div class="container">
+      <script id="user-template" type="text/x-handlebars-template">
+        <p>
+          <span> {{item}} </span>
+          -
+          <span>{{price}} Shekels </span>
+        </p>
+      </script>
+
       <div class="user-container"></div>
+
       <div class="quote-container"></div>
       <div class="content-container">
         <div class="pokemon-container"></div>
@@ -35,6 +44,9 @@
       crossorigin="anonymous"
     ></script>
     <script src="../build/User.js"></script>
+    <script src="../build/About.js"></script>
+    <script src="../build/Pokemon.js"></script>
+    <script src="../build/Quote.js"></script>
     <script src="../build/Render.js"></script>
     <script src="../build/Model.js"></script>
     <script src="../build/Controller.js"></script>
