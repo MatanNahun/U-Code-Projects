@@ -4,8 +4,8 @@ class Model {
   user: User;
   //   user = $.get("https://randomuser.me/api/");
 
-  constructor(user: User) {
-    this.user = user;
+  constructor() {
+    this.user = new User([], "Haifa", "Isreal", "matan", "Nahum", "link");
     $.ajax({
       url: "https://randomuser.me/api/?results=7",
       dataType: "json",
@@ -42,14 +42,30 @@ class Model {
     });
 
     $.ajax({
-      url: "https://api.kanye.rest",
+      url: `https://pokeapi.co/api/v2/pokemon/${this.randomID()}/`,
       dataType: "json",
-      success: function (kanyeData) {
-        const quote = kanyeData.quote;
-        console.log(quote);
+      success: function (pokemonData) {
+        console.log(pokemonData);
+        const pokemonName = pokemonData.name;
+        console.log(pokemonName);
+        const pokemonSpriteLink = pokemonData.sprites.front_default;
+        console.log(pokemonSpriteLink);
+      },
+    });
+
+    $.ajax({
+      url: "https://baconipsum.com/api/?type=meat-and-filler",
+      dataType: "json",
+      success: function (baconData) {
+        const randomBaconData = baconData;
+        console.log(randomBaconData[0]);
       },
     });
   }
+
+  randomID(): number {
+    return Math.floor(Math.random() * 900);
+  }
 }
-const user1 = new User([], "Haifa", "Isreal", "matan", "Nahum", "link");
-const model = new Model(user1);
+// const user1 = new User([], "Haifa", "Isreal", "matan", "Nahum", "link");
+const model = new Model();
