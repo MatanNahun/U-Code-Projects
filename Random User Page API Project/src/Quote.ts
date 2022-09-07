@@ -5,18 +5,14 @@ class Quote {
   }
 
   initQuote() {
-    var $quote = $(this); // get access to model with closure
+    var $quote = $(this); // get access to quote with closure
     return $.ajax({
       url: "https://api.kanye.rest",
       dataType: "json",
       success: function (kanyeData) {
         const quote = kanyeData.quote;
         $quote[0].text = quote;
-        // console.log($quote[0]);
       },
     });
   }
 }
-
-// const quote1 = new Quote();
-// quote1.initQuote();

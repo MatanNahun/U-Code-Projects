@@ -15,10 +15,7 @@ class Pokemon {
             success: function (pokemonData) {
                 $pokemon[0].name = pokemonData.name;
                 $pokemon[0].spriteLink = pokemonData.sprites.front_default;
-                // console.log($pokemon[0]);
             },
         });
     }
 }
-// const pokemon1 = new Pokemon();
-// pokemon1.initPokemon();

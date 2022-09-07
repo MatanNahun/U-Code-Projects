@@ -11,11 +11,7 @@ class About {
       dataType: "json",
       success: function (baconData) {
         $about[0].text = baconData;
-        // console.log($about[0]);
       },
     });
   }
 }
-
-// const about1 = new About();
-// about1.initAbout();
