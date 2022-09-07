@@ -28,9 +28,9 @@
         <h4>Friends</h4>
         <div class="friends-container"></div>
       </div>
-      <button id="generate-btn" class="buttons" type="button">generate new user
-</button>
-
+      <button id="generate-btn" class="buttons" type="button">
+        generate new user
+      </button>
     </div>
 
     <!-- Handelbars Scripts -->
@@ -39,9 +39,9 @@
     <script id="user-template" type="text/x-handlebars-template">
       <img id="profile-pic" src="{{pictureURL}}" alt="user image" />
       <div class="user-info">
-      <span> {{firstName}} {{lastName}} </span><br>
-      <span > {{city}}, {{state}} </span>
-    </div>
+        <span> {{firstName}} {{lastName}} </span><br />
+        <span> {{city}}, {{state}} </span>
+      </div>
     </script>
 
     <!-- script fo the user's friends -->
@@ -57,19 +57,17 @@
     </script>
 
     <!-- script for pokemon section -->
-    <script id="pokemon-template"  type="text/x-handlebars-template">
+    <script id="pokemon-template" type="text/x-handlebars-template">
       <img id="pokemon-image" src="{{spriteURL}}" alt="pokeon sprite" />
-      <div id="pokemon-text"> Favorite Pokemon: {{pokemonName}}</div>
-    </script>></script>
+      <div id="pokemon-text"> Favorite Pokemon: {{upperCase pokemonName}}</div>
+    </script>
+    >
 
     <!-- script for the about me -->
-    <script id="about-template" type="text/x-handlebars-template" >
-     <div class="meat-text"><b >About me</b> </div> 
+    <script id="about-template" type="text/x-handlebars-template">
+      <div class="meat-text"><b>About me</b> </div>
       <div class="meat-text">{{aboutText}}</div>
     </script>
-
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script

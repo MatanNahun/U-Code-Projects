@@ -7,3 +7,7 @@ model.getAllData().then((res) => render.renderAll(model));
 $("#generate-btn").on("click", function () {
   model.getAllData().then((res) => render.renderAll(model));
 });
+
+Handlebars.registerHelper("upperCase", function (property: any) {
+  return property.charAt(0).toUpperCase() + property.slice(1);
+});
