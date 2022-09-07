@@ -32,15 +32,34 @@
 
     <!-- Handelbars Scripts -->
 
+    <!-- script fot the iser info -->
     <script id="user-template" type="text/x-handlebars-template">
-      <span class="user-info"> {{firstName}} {{lastName}} </span>
-      <span class="user-info"> {{city}}, {{state}} </span>
       <img id="profile-pic" src="{{pictureURL}}" alt="user image" />
+      <span class="user-info"> {{firstName}} {{lastName}} </span><br />
+      <span class="user-info"> {{city}}, {{state}} </span>
     </script>
 
+    <!-- script fo the user's friends -->
     <script id="friends-template" type="text/x-handlebars-template">
-      <span class="friends-list"> {{friend}} </span>
+      <span class="friends-list"> {{friend}} </span> <br />
     </script>
+
+    <!-- script for quote -->
+    <script id="quote-template" type="text/x-handlebars-template">
+      <p class="quote-title"> Favorite quote:</p>
+      <div>"{{quote}}":</div>
+      <div> - kanye </div>
+    </script>
+
+    <!-- script for pokemon section -->
+    <script id="pokemon-template"  type="text/x-handlebars-template">
+      <img id="pokemon-image" src="{{spriteURL}}" alt="pokeon sprite" />
+      <div id="pokemon-text"> Favorite Pokemon: {{pokemonName}}</div>
+    </script>></script>
+
+    <!-- script for the about me -->
+    
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script
