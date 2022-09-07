@@ -24,7 +24,7 @@ class User {
                 $user[0].city = UserData.results[0].location.city;
                 $user[0].state = UserData.results[0].location.state;
                 $user[0].friends = userFriends;
-                $user[0].pictureURL = UserData.results[0].picture.thumbnail;
+                $user[0].pictureURL = UserData.results[0].picture.large;
                 // console.log($user[0]);
             },
         });

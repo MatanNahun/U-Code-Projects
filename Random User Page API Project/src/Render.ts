@@ -20,8 +20,25 @@ class Render {
     const template = Handlebars.compile(sourceFriends);
     for (let friend of friends) {
       let userFriend = template({ friend });
-      $(".friends-container").append(userFriend);
+      $(".friends").append(userFriend);
     }
+  }
+
+  renderQuote(quote: string): void {
+    const sourceQuote = $("#quote-template").html();
+    const template = Handlebars.compile(sourceQuote);
+    let quoteToRender = template({ quote });
+    $(".quote-container").append(quoteToRender);
+  }
+
+  renderPokemon(pokemon: Pokemon): void {
+    const sourcePokemon = $("#pokemon-template").html();
+    const template = Handlebars.compile(sourcePokemon);
+    let pokeomonToRender = template({
+      pokemonName: pokemon.name,
+      spriteURL: pokemon.spriteLink,
+    });
+    $(".pokemon-container").append(pokeomonToRender);
   }
 }
 
