@@ -18,7 +18,7 @@ class Render {
         const template = Handlebars.compile(sourceFriends);
         for (let friend of friends) {
             let userFriend = template({ friend });
-            $(".friends").append(userFriend);
+            $(".friends-container").append(userFriend);
         }
     }
 }

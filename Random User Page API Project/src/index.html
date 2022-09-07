@@ -18,12 +18,6 @@
 
   <body>
     <div class="container">
-      <script id="user-template" type="text/x-handlebars-template">
-        <span class="user-info"> {{firstName}} {{lastName}} </span>
-        <span class="user-info"> {{city}}, {{state}} </span>
-        <img id="profile-pic" src="{{pictureURL}}" alt="user image" />
-      </script>
-
       <div class="user-container"></div>
       <div class="quote-container"></div>
       <div class="content-container">
@@ -45,7 +39,7 @@
     </script>
 
     <script id="friends-template" type="text/x-handlebars-template">
-      <span class="user-info"> {{firstName}} </span>
+      <span class="friends-list"> {{friend}} </span>
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>

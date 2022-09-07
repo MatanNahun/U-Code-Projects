@@ -22,7 +22,7 @@ class User {
                 $user[0].firstName = UserData.results[0].name.first;
                 $user[0].lastName = UserData.results[0].name.last;
                 $user[0].city = UserData.results[0].location.city;
-                $user[0].city = UserData.results[0].location.state;
+                $user[0].state = UserData.results[0].location.state;
                 $user[0].friends = userFriends;
                 $user[0].pictureURL = UserData.results[0].picture.thumbnail;
                 // console.log($user[0]);
