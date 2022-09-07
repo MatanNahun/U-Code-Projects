@@ -1,5 +1,4 @@
 "use strict";
-console.log("Render");
 class Render {
     renderUser(user) {
         const sourceUserInfo = $("#user-template").html();
@@ -11,20 +10,23 @@ class Render {
             state: user.state,
             pictureURL: user.pictureURL,
         });
+        $(".user-container").empty();
         $(".user-container").append(userInfo);
     }
     renderFriends(friends) {
         const sourceFriends = $("#friends-template").html();
         const template = Handlebars.compile(sourceFriends);
+        $(".friends-container").empty();
         for (let friend of friends) {
             let userFriend = template({ friend });
-            $(".friends").append(userFriend);
+            $(".friends-container").append(userFriend);
         }
     }
     renderQuote(quote) {
         const sourceQuote = $("#quote-template").html();
         const template = Handlebars.compile(sourceQuote);
         let quoteToRender = template({ quoteText: quote.text });
+        $(".quote-container").empty();
         $(".quote-container").append(quoteToRender);
     }
     renderPokemon(pokemon) {
@@ -34,6 +36,7 @@ class Render {
             pokemonName: pokemon.name,
             spriteURL: pokemon.spriteLink,
         });
+        $(".pokemon-container").empty();
         $(".pokemon-container").append(pokeomonToRender);
     }
     renderAbout(about) {
@@ -41,6 +44,7 @@ class Render {
         const template = Handlebars.compile(sourceAbout);
         for (let sentence of about.text) {
             let aboutToRender = template({ aboutText: sentence });
+            $(".meat-container").empty();
             $(".meat-container").append(aboutToRender);
         }
     }
@@ -52,7 +56,3 @@ class Render {
         this.renderAbout(model.about);
     }
 }
-// const modelToRender = new Model();
-// console.log(modelToRender.user);
-// const Render1 = new Render();
-// Render1.renderUser(modelToRender.user);

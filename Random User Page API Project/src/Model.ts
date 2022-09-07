@@ -1,5 +1,3 @@
-console.log("Model");
-
 class Model {
   user: User;
   pokemonData: Pokemon;
