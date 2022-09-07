@@ -1,8 +1,6 @@
 console.log("Render");
 
 class Render {
-  renderAll(model: Model): void {}
-
   renderUser(user: User): void {
     const sourceUserInfo = $("#user-template").html();
     const template = Handlebars.compile(sourceUserInfo);
@@ -26,10 +24,10 @@ class Render {
     }
   }
 
-  renderQuote(quote: string): void {
+  renderQuote(quote: Quote): void {
     const sourceQuote = $("#quote-template").html();
     const template = Handlebars.compile(sourceQuote);
-    let quoteToRender = template({ quote });
+    let quoteToRender = template({ quoteText: quote.text });
     $(".quote-container").append(quoteToRender);
   }
 
@@ -50,6 +48,14 @@ class Render {
       let aboutToRender = template({ aboutText: sentence });
       $(".meat-container").append(aboutToRender);
     }
+  }
+
+  renderAll(model: Model): void {
+    this.renderUser(model.user);
+    this.renderFriends(model.user.friends);
+    this.renderPokemon(model.pokemonData);
+    this.renderQuote(model.quoteData);
+    this.renderAbout(model.about);
   }
 }
 

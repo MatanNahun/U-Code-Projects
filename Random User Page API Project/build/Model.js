@@ -12,13 +12,9 @@ console.log("Model");
 class Model {
     constructor() {
         this.user = new User();
-        // this.user.initUser();
         this.pokemonData = new Pokemon();
-        // this.pokemonData.initPokemon();
         this.quoteData = new Quote();
-        // this.quoteData.initQuote();
         this.about = new About();
-        // this.about.initAbout();
     }
     getAllData() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -31,5 +27,3 @@ class Model {
         });
     }
 }
-// const model = new Model();
-// console.log(model);
