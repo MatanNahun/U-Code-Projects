@@ -1,6 +1,8 @@
 console.log("Render");
 
 class Render {
+  renderAll(model: Model): void {}
+
   renderUser(user: User): void {
     const sourceUserInfo = $("#user-template").html();
     const template = Handlebars.compile(sourceUserInfo);
@@ -39,6 +41,15 @@ class Render {
       spriteURL: pokemon.spriteLink,
     });
     $(".pokemon-container").append(pokeomonToRender);
+  }
+
+  renderAbout(about: About): void {
+    const sourceAbout = $("#about-template").html();
+    const template = Handlebars.compile(sourceAbout);
+    for (let sentence of about.text) {
+      let aboutToRender = template({ aboutText: sentence });
+      $(".meat-container").append(aboutToRender);
+    }
   }
 }
 
