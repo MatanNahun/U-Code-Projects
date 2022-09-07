@@ -8,6 +8,6 @@ $("#generate-btn").on("click", function () {
   model.getAllData().then((res) => render.renderAll(model));
 });
 
-Handlebars.registerHelper("upperCase", function (property: any) {
+Handlebars.registerHelper("upperCase", function (property: string) {
   return property.charAt(0).toUpperCase() + property.slice(1);
 });
