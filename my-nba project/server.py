@@ -1,11 +1,17 @@
+from operator import index
 from tkinter.messagebox import YESNOCANCEL
 from webbrowser import get
 from fastapi import FastAPI
 from fastapi import Request, Response
 import requests
 import uvicorn
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
+
+app.mount("/build", StaticFiles(directory="build"), name="build")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 teams_id = {
@@ -18,7 +24,7 @@ teams_id = {
 
 @app.get("/")
 def root():
-    return {"message": "Server is up and running"}
+    return FileResponse("index.html")
 
 
 @app.get("/sanity")
