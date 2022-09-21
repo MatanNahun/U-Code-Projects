@@ -11,7 +11,6 @@ from fastapi.staticfiles import StaticFiles
 app = FastAPI()
 
 app.mount("/build", StaticFiles(directory="build"), name="build")
-app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 teams_id = {
@@ -54,4 +53,4 @@ async def show_players_by_teamName_and_year(teamName, year):
 
 
 if __name__ == "__main__":
-    uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("server:app", host="0.0.0.0", port=8080, reload=True)

@@ -8,12 +8,28 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+class Model {
+    constructor() {
+        this.player = new Player();
+    }
+    getPlayerData() {
+        return __awaiter(this, void 0, void 0, function* () {
+            this.player.show_players_with_params("lakers", "2020");
+        });
+    }
+}
 console.log("model");
-console.log("hi again");
+let modelExample = new Model();
+modelExample.getPlayerData();
 function show() {
     return __awaiter(this, void 0, void 0, function* () {
         let res = yield $.get("/sanity");
         console.log(res);
     });
 }
-show();
+function show_players() {
+    return __awaiter(this, void 0, void 0, function* () {
+        let res = yield $.get("/players/lakers/2020");
+        console.log(res);
+    });
+}
