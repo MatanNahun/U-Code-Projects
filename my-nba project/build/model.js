@@ -10,17 +10,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 class Model {
     constructor() {
-        this.player = new Player();
+        this.players = [];
     }
-    getPlayerData() {
+    getPlayersData(team, year) {
         return __awaiter(this, void 0, void 0, function* () {
-            this.player.show_players_with_params("lakers", "2020");
+            let playersData = yield $.get(`/players/${team}/${year}`);
+            for (let i = 0; i < playersData.length; i++) {
+                this.players.push(new Player(playersData[i]["firstName"], playersData[i]["lastName"], playersData[i]["jersey"], playersData[i]["pos"]));
+            }
+            console.log(this.players);
         });
     }
 }
-console.log("model");
-let modelExample = new Model();
-modelExample.getPlayerData();
+// console.log("model");
+// let modelExample = new Model();
+// modelExample.getPlayersData("lakers", "2020");
 function show() {
     return __awaiter(this, void 0, void 0, function* () {
         let res = yield $.get("/sanity");

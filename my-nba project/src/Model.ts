@@ -1,18 +1,44 @@
 class Model {
-  player: Player;
+  players: Player[];
 
   constructor() {
-    this.player = new Player();
+    this.players = [];
   }
 
-  async getPlayerData() {
-    this.player.show_players_with_params("lakers", "2020");
+  async getPlayersData(team: string, year: string) {
+    let playersData = await $.get(`/players/${team}/${year}`);
+    for (let i = 0; i < playersData.length; i++) {
+      this.players.push(
+        new Player(
+          playersData[i]["firstName"],
+          playersData[i]["lastName"],
+          playersData[i]["jersey"],
+          playersData[i]["pos"]
+        )
+      );
+    }
+    console.log(this.players);
   }
+
+  // async getPlayerData(team: string, year: string) {
+  //   let players = await $.get(`/players/${team}/${year}`);
+  //   console.log(players);
+  //   const playersList = [];
+  //   let player_card_data = players.map((player: any) => {
+  //     return {
+  //       first_name: player["firstName"],
+  //       last_name: player["lastName"],
+  //       jersey_number: player["jersey"],
+  //       position: player["pos"],
+  //     };
+  //   });
+  //   console.log(player_card_data);
+  // }
 }
 
-console.log("model");
-let modelExample = new Model();
-modelExample.getPlayerData();
+// console.log("model");
+// let modelExample = new Model();
+// modelExample.getPlayersData("lakers", "2020");
 
 async function show() {
   let res = await $.get("/sanity");

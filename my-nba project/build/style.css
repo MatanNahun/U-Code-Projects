@@ -1,3 +1,7 @@
-body {
-  color: aqua;
+div {
+  color: rgb(8, 63, 19);
+}
+
+#results-container {
+  color: rgb(8, 63, 19);
 }
