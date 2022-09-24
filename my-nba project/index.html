@@ -14,8 +14,26 @@
       <div class="page-title"> Your NBA Team
       </div>
       <div class="serach-bar-container">
-        <input type="text" id="team" name="team" placeholder="team name" />
-        <input type="text" id="year" name="year" placeholder="year" />
+        <select id="team" name="team">
+          <option value="lakers">lakers</option>
+          <option value="heat" selected>heat</option>
+          <option value="warriors">warriors</option>
+          <option value="suns">suns</option>
+        </select>
+
+        <select id="year" name="team">
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020" selected>2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2015">2015</option>
+          <option value="2014">2014</option>
+          <option value="2013">2013</option>
+          <option value="2012">2012</option>
+        </select>
+
         <button id="result-players-btn" type="get-team-btn">Get Team!</button>
       </div>
       <div id="results-container" class="players-results">
@@ -23,6 +41,7 @@
         <img class="page-default-pic" src="https://1000logos.net/wp-content/uploads/2017/04/Logo-NBA.png" width="705" height="500">
       </div>
 
+    <!-- script for players cards -->
     <script id="results-template" type="text/x-handlebars-template">
       {{#each players}}
         <div class="player-card">
