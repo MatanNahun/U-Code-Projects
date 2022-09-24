@@ -6,17 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/build/style.css" />
     <link href='https://fonts.googleapis.com/css?family=Allerta Stencil' rel='stylesheet'>
-    <!-- <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-      crossorigin="anonymous"
-    /> -->
+
     <title>my-NBA</title>
   </head>
   <body>
     <div class="page-container">
-      <div class="page-title"> Your NBA Team</div>
+      <div class="page-title"> Your NBA Team
+      </div>
       <div class="serach-bar-container">
         <input type="text" id="team" name="team" placeholder="team name" />
         <input type="text" id="year" name="year" placeholder="year" />
@@ -24,6 +20,8 @@
       </div>
       <div id="results-container" class="players-results">
         <div class="page-default-text" >watinig for your team...</div>
+        <img class="page-default-pic" src="https://1000logos.net/wp-content/uploads/2017/04/Logo-NBA.png" width="705" height="500">
+      </div>
 
     <script id="results-template" type="text/x-handlebars-template">
       {{#each players}}
