@@ -13,7 +13,7 @@ body {
   background-color: #a8a7a7;
   border: none;
   margin-top: 5%;
-  margin-left: 27%;
+  margin-left: 25%;
 }
 
 .player-card {
@@ -45,24 +45,24 @@ img {
   justify-content: center;
   align-items: center;
   margin: 2%;
+  size: 10cm;
 }
 
 #team {
-  /* justify-content: center; */
+  background-color: DodgerBlue;
+  width: 100px;
+  height: 30px;
 }
 
 #year {
-  /* width: 25%; */
+  background-color: DodgerBlue;
+  width: 100px;
+  height: 30px;
 }
 
 #result-players-btn {
-  /* width: 12.5%; */
+  background-color: #ff8928;
+  margin: 3%;
+  width: 100px;
+  height: 35px;
 }
-
-/* div {
-  color: rgb(8, 63, 19);
-}
-
-#results-container {
-  color: rgb(8, 63, 19);
-} */
