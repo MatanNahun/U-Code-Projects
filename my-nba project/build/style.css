@@ -1,11 +1,21 @@
 body {
   background-color: hsl(0, 3%, 85%);
+  font-family: "Allerta Stencil";
+  font-size: 22px;
 }
 
 .player-card {
   display: inline-block;
-  background-color: rgb(245, 120, 3);
+  background-color: #ff8928;
   margin: 0.25%;
+}
+
+.player-detail {
+  text-align: center;
+}
+
+img {
+  background-color: #0049b7;
 }
 
 .serach-bar-container {
