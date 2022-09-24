@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/build/style.css" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    /> -->
     <title>my-NBA</title>
   </head>
   <body>
@@ -14,14 +20,49 @@
         <input type="text" id="year" name="year" placeholder="year" />
         <button id="result-players-btn" type="get-team-btn">Get Team!</button>
       </div>
-      <div id="results-container" class="players-results">result:</div>
+      <div id="results-container" class="players-results">
+        <div class="player-card">
+          <div> firstName lastName</div>
+          <div> jerseyNumber </div>
+          <div> picture </div>
+          <div> position </div>
+        </div>
+
+        <!-- <div class="card" style="width: 18rem">
+          <img src="..." class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div> -->
     </div>
 
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script> -->
     <script id="results-template" type="text/x-handlebars-template">
+      {{#each players}}
+        <div class="player-card">
+          <div> {{firstName}} {{lastName}}</div>
+          <div> {{jerseyNumber}} </div>
+          <div> picture </div>
+          <div>  {{position}} </div>
+        </div>
+      {{/each}}
+    </script>
+
+    <!-- <script id="results-template" type="text/x-handlebars-template">
       {{#each players}}
         <div>{{firstName}} {{lastName}}, {{jerseyNumber}}, {{position}}</div>
       {{/each}}
-    </script>
+    </script> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
 
