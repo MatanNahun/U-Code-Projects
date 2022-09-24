@@ -1,7 +1,12 @@
 body {
   background-color: hsl(0, 3%, 85%);
+}
+
+.page-title {
   font-family: "Allerta Stencil";
-  font-size: 22px;
+  font-size: 50px;
+  margin: 2%;
+  text-align: center;
 }
 
 .player-card {
@@ -10,28 +15,38 @@ body {
   margin: 0.25%;
 }
 
+.page-default-text {
+  font-family: "Allerta Stencil";
+  font-size: 22px;
+  margin: 5%;
+}
+
 .player-detail {
   text-align: center;
+  font-family: "Allerta Stencil";
+  font-size: 22px;
 }
 
 img {
   background-color: #0049b7;
+  border: 8px solid #ff8928;
 }
 
 .serach-bar-container {
-  display: inline;
+  display: inline-block;
+  text-align: center;
 }
 
 #team {
-  width: 60%;
+  /* justify-content: center; */
 }
 
 #year {
-  width: 25%;
+  /* width: 25%; */
 }
 
 #result-players-btn {
-  width: 12.5%;
+  /* width: 12.5%; */
 }
 
 /* div {
