@@ -24,7 +24,7 @@
         <div class="player-card">
           <div> firstName lastName</div>
           <div> jerseyNumber </div>
-          <div> picture </div>
+          <img id="profile-pic" src="https://nba-players.herokuapp.com/players/curry/stephen" width="250" height="200" alt="player image" />
           <div> position </div>
         </div>
 
@@ -53,6 +53,7 @@
           <div> {{firstName}} {{lastName}}</div>
           <div> {{jerseyNumber}} </div>
           <div> picture </div>
+          <img id="profile-pic" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}"  width="250" height="200" alt="player image" />
           <div>  {{position}} </div>
         </div>
       {{/each}}
