@@ -42,14 +42,33 @@ def get_player_by_year(year):
     return players.json()["league"]["standard"]
 
 
-@app.get("/players/{teamName}/{year}")
-async def show_players_by_teamName_and_year(teamName, year):
+@app.get("/players/{teamName}/{year}/")
+async def show_players_by_teamName_and_year(teamName, year, dateOfBirth="false"):
     players_relevant_data = get_player_by_year(year)
-    return [
-        player
-        for player in players_relevant_data
-        if player["teamId"] == teams_id[teamName]
-    ]
+    print(dateOfBirth)
+    if dateOfBirth == "true":
+        return [
+            player
+            for player in players_relevant_data
+            if player["teamId"] == teams_id[teamName]
+            if player["dateOfBirthUTC"]
+        ]
+    else:
+        return [
+            player
+            for player in players_relevant_data
+            if player["teamId"] == teams_id[teamName]
+        ]
+
+
+# @app.get("/players/{teamName}/{year}")
+# async def show_players_by_teamName_and_year(teamName, year):
+#     players_relevant_data = get_player_by_year(year)
+#     return [
+#         player
+#         for player in players_relevant_data
+#         if player["teamId"] == teams_id[teamName]
+#     ]
 
 
 if __name__ == "__main__":
