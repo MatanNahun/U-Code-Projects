@@ -50,14 +50,14 @@ async def show_players_by_teamName_and_year(teamName, year, dateOfBirth="false")
         return [
             player
             for player in players_relevant_data
-            if player["teamId"] == teams_id[teamName]
+            if teams_id[teamName] in player["teamId"].split()
             if player["dateOfBirthUTC"]
         ]
     else:
         return [
             player
             for player in players_relevant_data
-            if player["teamId"] == teams_id[teamName]
+            if teams_id[teamName] in player["teamId"].split()
         ]
 
 
