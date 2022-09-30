@@ -20,6 +20,8 @@ teams_id = {
     "suns": "1610612756",
 }
 
+dream_team = [{"firstName": "Ohad", "lastName": "Hofi", "jersey": "jers", "pos": "G"}]
+
 
 @app.get("/")
 def root():
@@ -69,6 +71,35 @@ async def show_players_by_teamName_and_year(teamName, year, dateOfBirth="false")
 #         for player in players_relevant_data
 #         if player["teamId"] == teams_id[teamName]
 #     ]
+
+
+@app.get("/dreamTeam")
+def get_dream_team():
+    return dream_team
+
+
+@app.post("/dreamTeam")
+async def add_player_to_dream_team(request: Request):
+    new_player_dream_team = await request.json()
+    print(new_player_dream_team)
+    dream_team.append(new_player_dream_team)
+    return "Created"
+
+
+@app.delete("/dreamTeam")
+async def add_player_to_dream_team(request: Request):
+    global dream_team
+    player_to_delete_from_deam_team = await request.json()
+    updated_dream_team = [
+        player
+        for player in dream_team
+        if not (
+            player["firstName"] == player_to_delete_from_deam_team["firstName"]
+            and player["lastName"] == player_to_delete_from_deam_team["lastName"]
+        )
+    ]
+    dream_team = updated_dream_team
+    return dream_team
 
 
 if __name__ == "__main__":
