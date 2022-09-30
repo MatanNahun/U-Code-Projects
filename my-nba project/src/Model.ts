@@ -6,7 +6,15 @@ class Model {
   }
 
   async getPlayersData(team: string, year: string) {
-    let playersData = await $.get(`/players/${team}/${year}`);
+    const checkbox_input = document.getElementById(
+      "checkbox"
+    ) as HTMLInputElement;
+
+    let URL: string = `/players/${team}/${year}`;
+    URL = checkbox_input?.checked ? URL + "?dateOfBirth=true" : URL;
+    console.log(URL);
+
+    let playersData = await $.get(URL);
     for (let i = 0; i < playersData.length; i++) {
       this.players.push(
         new Player(

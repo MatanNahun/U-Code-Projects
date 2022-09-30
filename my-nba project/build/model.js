@@ -14,7 +14,11 @@ class Model {
     }
     getPlayersData(team, year) {
         return __awaiter(this, void 0, void 0, function* () {
-            let playersData = yield $.get(`/players/${team}/${year}`);
+            const checkbox_input = document.getElementById("checkbox");
+            let URL = `/players/${team}/${year}`;
+            URL = (checkbox_input === null || checkbox_input === void 0 ? void 0 : checkbox_input.checked) ? URL + "?dateOfBirth=true" : URL;
+            console.log(URL);
+            let playersData = yield $.get(URL);
             for (let i = 0; i < playersData.length; i++) {
                 this.players.push(new Player(playersData[i]["firstName"], playersData[i]["lastName"], playersData[i]["jersey"], playersData[i]["pos"]));
             }
