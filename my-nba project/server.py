@@ -1,6 +1,7 @@
 from operator import index
 from tkinter.messagebox import YESNOCANCEL
 from webbrowser import get
+from xmlrpc.client import boolean
 from fastapi import FastAPI
 from fastapi import Request, Response
 import requests
@@ -53,22 +54,25 @@ def get_player_by_year(year):
 
 
 @app.get("/players/{teamName}/{year}/")
-async def show_players_by_teamName_and_year(teamName, year, dateOfBirth="false"):
+async def show_players_by_teamName_and_year(
+    teamName, year, dateOfBirth: boolean = False
+):
     players_relevant_data = get_player_by_year(year)
+    players_relevant_data_no_query = [
+        player
+        for player in players_relevant_data
+        if teams_id[teamName] in player["teamId"].split()
+    ]
+
     print(dateOfBirth)
-    if dateOfBirth == "true":
+    if dateOfBirth:
         return [
             player
-            for player in players_relevant_data
-            if teams_id[teamName] in player["teamId"].split()
+            for player in players_relevant_data_no_query
             if player["dateOfBirthUTC"]
         ]
     else:
-        return [
-            player
-            for player in players_relevant_data
-            if teams_id[teamName] in player["teamId"].split()
-        ]
+        return players_relevant_data_no_query
 
 
 # @app.get("/players/{teamName}/{year}")
