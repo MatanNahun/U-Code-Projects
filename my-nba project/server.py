@@ -22,6 +22,14 @@ teams_id = {
 
 dream_team = [{"firstName": "Ohad", "lastName": "Hofi", "jersey": "jers", "pos": "G"}]
 
+STATISTIC_FILTER = [
+    "games_played",
+    "minutes_per_game",
+    "points_per_game",
+    "assists_per_game",
+    "rebounds_per_game",
+]
+
 
 @app.get("/")
 def root():
@@ -73,6 +81,7 @@ async def show_players_by_teamName_and_year(teamName, year, dateOfBirth="false")
 #     ]
 
 
+# Dream Team Crud functions
 @app.get("/dreamTeam")
 def get_dream_team():
     return dream_team
@@ -87,7 +96,7 @@ async def add_player_to_dream_team(request: Request):
 
 
 @app.delete("/dreamTeam")
-async def add_player_to_dream_team(request: Request):
+async def delete_player_from_dream_team(request: Request):
     global dream_team
     player_to_delete_from_deam_team = await request.json()
     updated_dream_team = [
@@ -100,6 +109,19 @@ async def add_player_to_dream_team(request: Request):
     ]
     dream_team = updated_dream_team
     return dream_team
+
+
+# Player Stats:
+
+
+@app.get("/players/stats/{firstName}/{lastName}")
+async def get_stats(firstName, lastName):
+    stats = requests.get(
+        f"https://nba-players.herokuapp.com/players-stats/{firstName}/{lastName}"
+    )
+    stats = stats.json()
+
+    return {key: val for key, val in stats.items() if key in STATISTIC_FILTER}
 
 
 if __name__ == "__main__":
