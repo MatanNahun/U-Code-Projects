@@ -1,8 +1,10 @@
 class Model {
   players: Player[];
+  dreamTeam: Player[];
 
   constructor() {
     this.players = [];
+    this.dreamTeam = [];
   }
 
   async getPlayersData(team: string, year: string) {
@@ -28,21 +30,44 @@ class Model {
     console.log(this.players);
   }
 
-  // async getPlayerData(team: string, year: string) {
-  //   let players = await $.get(`/players/${team}/${year}`);
-  //   console.log(players);
-  //   const playersList = [];
-  //   let player_card_data = players.map((player: any) => {
-  //     return {
-  //       first_name: player["firstName"],
-  //       last_name: player["lastName"],
-  //       jersey_number: player["jersey"],
-  //       position: player["pos"],
-  //     };
-  //   });
-  //   console.log(player_card_data);
-  // }
+  async addPlayerToDreamTeam(
+    firstName: any,
+    lastName: any,
+    jerseyNumber: any,
+    position: any
+  ) {
+    console.log(firstName);
+    console.log(lastName);
+    console.log(jerseyNumber);
+    console.log(position);
+    $.ajax({
+      url: "/dreamTeam",
+      type: 'POST',
+      data: 
+
+    })
+  }
 }
+
+$("#results-container").on("click", ".add-to-dreamTeam-btn", function (event) {
+  const firstName = $(this)
+    .closest(".player-card")
+    .find(".player-detail")[0].textContent;
+
+  const lastName = $(this)
+    .closest(".player-card")
+    .find(".player-detail")[1].textContent;
+
+  const jerseyNumber = $(this)
+    .closest(".player-card")
+    .find(".player-detail")[2].textContent;
+
+  const position = $(this)
+    .closest(".player-card")
+    .find(".player-detail")[4].textContent;
+
+  model.addPlayerToDreamTeam(firstName, lastName, jerseyNumber, position);
+});
 
 // console.log("model");
 // let modelExample = new Model();
