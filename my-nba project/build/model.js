@@ -34,8 +34,16 @@ class Model {
             console.log(position);
             $.ajax({
                 url: "/dreamTeam",
-                type: 'POST',
-                data: 
+                type: "POST",
+                data: JSON.stringify({
+                    firstName: firstName,
+                    lastName: lastName,
+                    jerseyNumber: jerseyNumber,
+                    position: position,
+                }),
+                success: function () {
+                    console.log("post to server");
+                },
             });
         });
     }
