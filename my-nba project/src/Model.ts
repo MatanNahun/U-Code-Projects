@@ -30,51 +30,18 @@ class Model {
     console.log(this.players);
   }
 
-  async addPlayerToDreamTeam(
-    firstName: any,
-    lastName: any,
-    jerseyNumber: any,
-    position: any
-  ) {
-    console.log(firstName);
-    console.log(lastName);
-    console.log(jerseyNumber);
-    console.log(position);
+  async addPlayerToDreamTeam(playerToAdd: Player) {
+    console.log(playerToAdd);
     $.ajax({
       url: "/dreamTeam",
       type: "POST",
-      data: JSON.stringify({
-        firstName: firstName,
-        lastName: lastName,
-        jerseyNumber: jerseyNumber,
-        position: position,
-      }),
+      data: JSON.stringify(playerToAdd),
       success: function () {
         console.log("post to server");
       },
     });
   }
 }
-
-$("#results-container").on("click", ".add-to-dreamTeam-btn", function (event) {
-  const firstName = $(this)
-    .closest(".player-card")
-    .find(".player-detail")[0].textContent;
-
-  const lastName = $(this)
-    .closest(".player-card")
-    .find(".player-detail")[1].textContent;
-
-  const jerseyNumber = $(this)
-    .closest(".player-card")
-    .find(".player-detail")[2].textContent;
-
-  const position = $(this)
-    .closest(".player-card")
-    .find(".player-detail")[4].textContent;
-
-  model.addPlayerToDreamTeam(firstName, lastName, jerseyNumber, position);
-});
 
 // console.log("model");
 // let modelExample = new Model();

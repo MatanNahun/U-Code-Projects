@@ -13,3 +13,11 @@ $("#result-players-btn").on("click", function () {
         .getPlayersData(teamInput.value, yearInput.value)
         .then(() => render.renderPlayers(newPlayersResults.players));
 });
+$("#results-container").on("click", ".add-to-dreamTeam-btn", function (event) {
+    const firstName = String($(this).closest(".player-card").find(".player-detail")[0].textContent);
+    const lastName = String($(this).closest(".player-card").find(".player-detail")[1].textContent);
+    const jerseyNumber = String($(this).closest(".player-card").find(".player-detail")[2].textContent);
+    const position = String($(this).closest(".player-card").find(".player-detail")[4].textContent);
+    const newPlayerToAdd = new Player(firstName, lastName, jerseyNumber, position);
+    model.addPlayerToDreamTeam(newPlayerToAdd);
+});
