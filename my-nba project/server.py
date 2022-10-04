@@ -21,7 +21,10 @@ teams_id = {
     "suns": "1610612756",
 }
 
-dream_team = [{"firstName": "Ohad", "lastName": "Hofi", "jersey": "jers", "pos": "G"}]
+dream_team = [
+    {"firstName": "Jimmy", "lastName": "Butler", "jerseyNumber": "22", "position": "F"},
+    {"firstName": "Jimmy", "lastName": "Butler", "jerseyNumber": "22", "position": "F"},
+]
 
 STATISTIC_FILTER = [
     "games_played",
@@ -129,4 +132,4 @@ async def get_stats(firstName, lastName):
 
 
 if __name__ == "__main__":
-    uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("server:app", host="0.0.0.0", port=8080, reload=True)

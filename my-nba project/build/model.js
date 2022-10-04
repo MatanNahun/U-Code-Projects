@@ -39,10 +39,20 @@ class Model {
             });
         });
     }
+    getDreamTeam() {
+        return __awaiter(this, void 0, void 0, function* () {
+            let dreamTeamData = yield $.get("/dreamTeam");
+            console.log(dreamTeamData);
+            for (let i = 0; i < dreamTeamData.length; i++) {
+                this.dreamTeam.push(new Player(dreamTeamData[i]["firstName"], dreamTeamData[i]["lastName"], dreamTeamData[i]["jerseyNumber"], dreamTeamData[i]["position"]));
+            }
+            console.log(this.dreamTeam);
+        });
+    }
 }
 // console.log("model");
 // let modelExample = new Model();
-// modelExample.getPlayersData("lakers", "2020");
+// modelExample.getDreamTeam();
 function show() {
     return __awaiter(this, void 0, void 0, function* () {
         let res = yield $.get("/sanity");

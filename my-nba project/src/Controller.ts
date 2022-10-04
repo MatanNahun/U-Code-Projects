@@ -7,6 +7,7 @@ const render = new Render();
 //   .getPlayersData("lakers", "2020")
 //   .then(() => render.renderPlayers(model.players));
 
+// show players after choose team and year option with Get Team button:
 $("#result-players-btn").on("click", function () {
   const teamInput = document.getElementById("team") as HTMLInputElement;
   const yearInput = document.getElementById("year") as HTMLInputElement;
@@ -17,6 +18,7 @@ $("#result-players-btn").on("click", function () {
     .then(() => render.renderPlayers(newPlayersResults.players));
 });
 
+// add player to dreamTeam with add button
 $("#results-container").on("click", ".add-to-dreamTeam-btn", function (event) {
   const firstName = String(
     $(this).closest(".player-card").find(".player-detail")[0].textContent
@@ -42,4 +44,12 @@ $("#results-container").on("click", ".add-to-dreamTeam-btn", function (event) {
   );
 
   model.addPlayerToDreamTeam(newPlayerToAdd);
+});
+
+// show dreamTeam with retreive button
+$("#results-dreamTeam-btn").on("click", function () {
+  const dreamTeamResults = new Model();
+  dreamTeamResults
+    .getDreamTeam()
+    .then(() => render.renderDreamTeam(dreamTeamResults.dreamTeam));
 });
