@@ -63,13 +63,6 @@ class Model {
         });
     }
 }
-// console.log("model");
-// let modelExample = new Model();
-// modelExample.getDreamTeam();
-// let playerExample = new Player("Jimmy", "Butler", "22", "F");
-// console.log(playerExample);
-// modelExample.deletePlayerFromDreamTeam(playerExample);
-// modelExample.getDreamTeam();
 function show() {
     return __awaiter(this, void 0, void 0, function* () {
         let res = yield $.get("/sanity");

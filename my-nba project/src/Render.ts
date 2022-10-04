@@ -15,5 +15,3 @@ class Render {
     $(".players-results").append(newHTML);
   }
 }
-
-console.log("render");

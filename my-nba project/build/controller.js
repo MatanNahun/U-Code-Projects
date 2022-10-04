@@ -1,9 +1,6 @@
 "use strict";
 const model = new Model();
 const render = new Render();
-// model
-//   .getPlayersData("lakers", "2020")
-//   .then(() => render.renderPlayers(model.players));
 // show players after choose team and year option with Get Team button:
 $("#result-players-btn").on("click", function () {
     const teamInput = document.getElementById("team");
@@ -22,6 +19,7 @@ $("#results-container").on("click", ".add-to-dreamTeam-btn", function (event) {
     const newPlayerToAdd = new Player(firstName, lastName, jerseyNumber, position);
     model.addPlayerToDreamTeam(newPlayerToAdd);
 });
+// delete player from dreamTeam with delete button
 $("#results-container").on("click", ".delete-from-dreamTeam-btn", function () {
     const PLAYER_DETAIL = $(this).closest(".player-card").find(".player-detail");
     const firstName = String(PLAYER_DETAIL[0].textContent);
@@ -29,7 +27,6 @@ $("#results-container").on("click", ".delete-from-dreamTeam-btn", function () {
     const jerseyNumber = String(PLAYER_DETAIL[2].textContent);
     const position = String(PLAYER_DETAIL[4].textContent);
     const playerToDelete = new Player(firstName, lastName, jerseyNumber, position);
-    console.log(playerToDelete);
     model.deletePlayerFromDreamTeam(playerToDelete);
     const dreamTeamAfterDeletePlayer = new Model();
     dreamTeamAfterDeletePlayer

@@ -77,17 +77,9 @@ async def show_players_by_teamName_and_year(
         return players_relevant_data_no_query
 
 
-# @app.get("/players/{teamName}/{year}")
-# async def show_players_by_teamName_and_year(teamName, year):
-#     players_relevant_data = get_player_by_year(year)
-#     return [
-#         player
-#         for player in players_relevant_data
-#         if player["teamId"] == teams_id[teamName]
-#     ]
-
-
 # Dream Team Crud functions
+
+
 @app.get("/dreamTeam")
 def get_dream_team():
     return dream_team

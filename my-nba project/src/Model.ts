@@ -71,14 +71,6 @@ class Model {
   }
 }
 
-// console.log("model");
-// let modelExample = new Model();
-// modelExample.getDreamTeam();
-// let playerExample = new Player("Jimmy", "Butler", "22", "F");
-// console.log(playerExample);
-// modelExample.deletePlayerFromDreamTeam(playerExample);
-// modelExample.getDreamTeam();
-
 async function show() {
   let res = await $.get("/sanity");
   console.log(res);
