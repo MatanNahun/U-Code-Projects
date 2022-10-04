@@ -23,7 +23,6 @@ teams_id = {
 
 dream_team = [
     {"firstName": "Jimmy", "lastName": "Butler", "jerseyNumber": "22", "position": "F"},
-    {"firstName": "Jimmy", "lastName": "Butler", "jerseyNumber": "22", "position": "F"},
 ]
 
 STATISTIC_FILTER = [

@@ -1,5 +1,4 @@
 const model = new Model();
-console.log(model);
 
 const render = new Render();
 
@@ -62,6 +61,10 @@ $("#results-container").on("click", ".delete-from-dreamTeam-btn", function () {
 
   console.log(playerToDelete);
   model.deletePlayerFromDreamTeam(playerToDelete);
+  const dreamTeamAfterDeletePlayer = new Model();
+  dreamTeamAfterDeletePlayer
+    .getDreamTeam()
+    .then(() => render.renderDreamTeam(dreamTeamAfterDeletePlayer.dreamTeam));
 });
 
 // show dreamTeam with retreive button
