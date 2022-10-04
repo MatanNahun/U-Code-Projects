@@ -119,8 +119,6 @@ async def delete_player_from_dream_team(request: Request):
 
 
 # Player Stats:
-
-
 @app.get("/players/stats/{firstName}/{lastName}")
 async def get_stats(firstName, lastName):
     stats = requests.get(
@@ -132,4 +130,4 @@ async def get_stats(firstName, lastName):
 
 
 if __name__ == "__main__":
-    uvicorn.run("server:app", host="0.0.0.0", port=8080, reload=True)
+    uvicorn.run("server:app", host="0.0.0.0", port=8040, reload=True)

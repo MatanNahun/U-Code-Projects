@@ -39,6 +39,19 @@ class Model {
             });
         });
     }
+    deletePlayerFromDreamTeam(playerToDelete) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log(playerToDelete);
+            $.ajax({
+                url: "/dreamTeam",
+                type: "DELETE",
+                data: JSON.stringify(playerToDelete),
+                success: function () {
+                    console.log("delete request to server");
+                },
+            });
+        });
+    }
     getDreamTeam() {
         return __awaiter(this, void 0, void 0, function* () {
             let dreamTeamData = yield $.get("/dreamTeam");
@@ -52,6 +65,10 @@ class Model {
 }
 // console.log("model");
 // let modelExample = new Model();
+// modelExample.getDreamTeam();
+// let playerExample = new Player("Jimmy", "Butler", "22", "F");
+// console.log(playerExample);
+// modelExample.deletePlayerFromDreamTeam(playerExample);
 // modelExample.getDreamTeam();
 function show() {
     return __awaiter(this, void 0, void 0, function* () {

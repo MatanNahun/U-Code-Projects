@@ -23,6 +23,16 @@ $("#results-container").on("click", ".add-to-dreamTeam-btn", function (event) {
     const newPlayerToAdd = new Player(firstName, lastName, jerseyNumber, position);
     model.addPlayerToDreamTeam(newPlayerToAdd);
 });
+$("#results-container").on("click", ".delete-from-dreamTeam-btn", function () {
+    const PLAYER_DETAIL = $(this).closest(".player-card").find(".player-detail");
+    const firstName = String(PLAYER_DETAIL[0].textContent);
+    const lastName = String(PLAYER_DETAIL[1].textContent);
+    const jerseyNumber = String(PLAYER_DETAIL[2].textContent);
+    const position = String(PLAYER_DETAIL[4].textContent);
+    const playerToDelete = new Player(firstName, lastName, jerseyNumber, position);
+    console.log(playerToDelete);
+    model.deletePlayerFromDreamTeam(playerToDelete);
+});
 // show dreamTeam with retreive button
 $("#results-dreamTeam-btn").on("click", function () {
     const dreamTeamResults = new Model();

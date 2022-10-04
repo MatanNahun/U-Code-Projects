@@ -42,6 +42,18 @@ class Model {
     });
   }
 
+  async deletePlayerFromDreamTeam(playerToDelete: Player) {
+    console.log(playerToDelete);
+    $.ajax({
+      url: "/dreamTeam",
+      type: "DELETE",
+      data: JSON.stringify(playerToDelete),
+      success: function () {
+        console.log("delete request to server");
+      },
+    });
+  }
+
   async getDreamTeam() {
     let dreamTeamData = await $.get("/dreamTeam");
     console.log(dreamTeamData);
@@ -61,6 +73,10 @@ class Model {
 
 // console.log("model");
 // let modelExample = new Model();
+// modelExample.getDreamTeam();
+// let playerExample = new Player("Jimmy", "Butler", "22", "F");
+// console.log(playerExample);
+// modelExample.deletePlayerFromDreamTeam(playerExample);
 // modelExample.getDreamTeam();
 
 async function show() {
