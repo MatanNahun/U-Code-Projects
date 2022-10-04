@@ -14,21 +14,11 @@ $("#result-players-btn").on("click", function () {
 
 // add player to dreamTeam with add button
 $("#results-container").on("click", ".add-to-dreamTeam-btn", function (event) {
-  const firstName = String(
-    $(this).closest(".player-card").find(".player-detail")[0].textContent
-  );
-
-  const lastName = String(
-    $(this).closest(".player-card").find(".player-detail")[1].textContent
-  );
-
-  const jerseyNumber = String(
-    $(this).closest(".player-card").find(".player-detail")[2].textContent
-  );
-
-  const position = String(
-    $(this).closest(".player-card").find(".player-detail")[4].textContent
-  );
+  const PLAYER_DETAIL = $(this).closest(".player-card").find(".player-detail");
+  const firstName = String(PLAYER_DETAIL[0].textContent);
+  const lastName = String(PLAYER_DETAIL[1].textContent);
+  const jerseyNumber = String(PLAYER_DETAIL[2].textContent);
+  const position = String(PLAYER_DETAIL[4].textContent);
 
   const newPlayerToAdd = new Player(
     firstName,
