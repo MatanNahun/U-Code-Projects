@@ -63,11 +63,11 @@
     <script id="results-dreamTeam-template" type="text/x-handlebars-template">
       {{#each dreamTeam}}
         <div class="player-card">
-          <div class="player-detail">{{firstName}}</div>
-          <div class="player-detail">{{lastName}}</div>
-          <div class="player-detail">{{jerseyNumber}}</div>
-          <img class="player-detail" id="profile-pic" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" onerror="this.src='https://cdn.vectorstock.com/i/preview-1x/75/58/default-placeholder-fitness-trainer-in-a-t-shirt-vector-20847558.webp'"  width="250" height="200" alt="player image" />
-          <div class="player-detail">{{position}}</div>
+          <div class="dreamTeam-player-detail">{{firstName}}</div>
+          <div class="dreamTeam-player-detail">{{lastName}}</div>
+          <div class="dreamTeam-player-detail">{{jerseyNumber}}</div>
+          <img class="dreamTeam-player-detail" id="profile-pic" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" onerror="this.src='https://cdn.vectorstock.com/i/preview-1x/75/58/default-placeholder-fitness-trainer-in-a-t-shirt-vector-20847558.webp'"  width="250" height="200" alt="player image" />
+          <div class="dreamTeam-player-detail">{{position}}</div>
           <button class="delete-from-dreamTeam-btn" type="delete-from-dreamTeam-btn">delete from dream team</button>
         </div>
       {{/each}}

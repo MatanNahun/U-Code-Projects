@@ -32,7 +32,9 @@ $("#results-container").on("click", ".add-to-dreamTeam-btn", function (event) {
 
 // delete player from dreamTeam with delete button
 $("#results-container").on("click", ".delete-from-dreamTeam-btn", function () {
-  const PLAYER_DETAIL = $(this).closest(".player-card").find(".player-detail");
+  const PLAYER_DETAIL = $(this)
+    .closest(".player-card")
+    .find(".dreamTeam-player-detail");
   const firstName = String(PLAYER_DETAIL[0].textContent);
   const lastName = String(PLAYER_DETAIL[1].textContent);
   const jerseyNumber = String(PLAYER_DETAIL[2].textContent);

@@ -35,9 +35,20 @@ body {
   font-size: 22px;
 }
 
+.dreamTeam-player-detail {
+  text-align: center;
+  font-family: "Allerta Stencil";
+  font-size: 22px;
+}
+
 img {
   background-color: #0049b7;
   border: 8px solid #ff8928;
+}
+
+img.dreamTeam-player-detail {
+  background-color: #a212f0;
+  border: 8px solid #f5a96b;
 }
 
 .serach-bar-container {
@@ -63,6 +74,12 @@ img {
 #result-players-btn {
   background-color: #ff8928;
   margin: 3%;
+  width: 100px;
+  height: 35px;
+}
+
+#results-dreamTeam-btn {
+  background-color: #a44cfb;
   width: 100px;
   height: 35px;
 }
