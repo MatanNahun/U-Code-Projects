@@ -42,7 +42,12 @@ $("#results-dreamTeam-btn").on("click", function () {
         .then(() => render.renderDreamTeam(dreamTeamResults.dreamTeam));
 });
 $("#results-container").on("click", ".player-card", function () {
-    console.log($(this));
-    const modelStatistics = new Model();
-    modelStatistics.getStatitsticsPlayer();
+    const PLAYER_DETAIL = $(this).find(".player-detail");
+    let firstName = String(PLAYER_DETAIL[0].textContent);
+    let lastName = String(PLAYER_DETAIL[1].textContent);
+    let firstNameLowerCase = firstName.toLowerCase();
+    let lastNameLowerCase = lastName.toLowerCase();
+    console.log(firstNameLowerCase);
+    console.log(lastNameLowerCase);
+    model.getStatitsticsPlayer(lastNameLowerCase, firstNameLowerCase);
 });

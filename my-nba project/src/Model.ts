@@ -70,9 +70,7 @@ class Model {
     console.log(this.dreamTeam);
   }
 
-  async getStatitsticsPlayer() {
-    let firstName = "jimmy";
-    let lastName = "butler";
+  async getStatitsticsPlayer(lastName: string, firstName: string) {
     let statistics = await $.get(`/players/stats/${lastName}/${firstName}`);
     console.log(statistics);
   }

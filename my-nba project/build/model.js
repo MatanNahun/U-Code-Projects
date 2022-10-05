@@ -62,10 +62,8 @@ class Model {
             console.log(this.dreamTeam);
         });
     }
-    getStatitsticsPlayer() {
+    getStatitsticsPlayer(lastName, firstName) {
         return __awaiter(this, void 0, void 0, function* () {
-            let firstName = "jimmy";
-            let lastName = "butler";
             let statistics = yield $.get(`/players/stats/${lastName}/${firstName}`);
             console.log(statistics);
         });
