@@ -59,3 +59,9 @@ $("#results-dreamTeam-btn").on("click", function () {
     .getDreamTeam()
     .then(() => render.renderDreamTeam(dreamTeamResults.dreamTeam));
 });
+
+$("#results-container").on("click", ".player-card", function () {
+  console.log($(this));
+  const modelStatistics = new Model();
+  modelStatistics.getStatitsticsPlayer();
+});

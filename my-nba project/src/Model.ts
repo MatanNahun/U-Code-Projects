@@ -69,6 +69,13 @@ class Model {
     }
     console.log(this.dreamTeam);
   }
+
+  async getStatitsticsPlayer() {
+    let firstName = "jimmy";
+    let lastName = "butler";
+    let statistics = await $.get(`/players/stats/${lastName}/${firstName}`);
+    console.log(statistics);
+  }
 }
 
 async function show() {

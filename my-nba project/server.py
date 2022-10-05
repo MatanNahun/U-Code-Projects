@@ -110,10 +110,10 @@ async def delete_player_from_dream_team(request: Request):
 
 
 # Player Stats:
-@app.get("/players/stats/{firstName}/{lastName}")
-async def get_stats(firstName, lastName):
+@app.get("/players/stats/{lastName}/{firstName}")
+async def get_stats(lastName, firstName):
     stats = requests.get(
-        f"https://nba-players.herokuapp.com/players-stats/{firstName}/{lastName}"
+        f"https://nba-players.herokuapp.com/players-stats/{lastName}/{firstName}"
     )
     stats = stats.json()
 

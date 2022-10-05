@@ -62,6 +62,14 @@ class Model {
             console.log(this.dreamTeam);
         });
     }
+    getStatitsticsPlayer() {
+        return __awaiter(this, void 0, void 0, function* () {
+            let firstName = "jimmy";
+            let lastName = "butler";
+            let statistics = yield $.get(`/players/stats/${lastName}/${firstName}`);
+            console.log(statistics);
+        });
+    }
 }
 function show() {
     return __awaiter(this, void 0, void 0, function* () {
