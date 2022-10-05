@@ -32,9 +32,7 @@ $("#results-container").on("click", ".add-to-dreamTeam-btn", function (event) {
 
 // delete player from dreamTeam with delete button
 $("#results-container").on("click", ".delete-from-dreamTeam-btn", function () {
-  const PLAYER_DETAIL = $(this)
-    .closest(".player-card")
-    .find(".dreamTeam-player-detail");
+  const PLAYER_DETAIL = $(this).closest(".player-card").find(".player-detail");
   const firstName = String(PLAYER_DETAIL[0].textContent);
   const lastName = String(PLAYER_DETAIL[1].textContent);
   const jerseyNumber = String(PLAYER_DETAIL[2].textContent);
@@ -62,6 +60,7 @@ $("#results-dreamTeam-btn").on("click", function () {
     .then(() => render.renderDreamTeam(dreamTeamResults.dreamTeam));
 });
 
+// statictic to console:
 $("#results-container").on("click", ".player-card", function () {
   const PLAYER_DETAIL = $(this).find(".player-detail");
 
