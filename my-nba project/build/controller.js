@@ -54,7 +54,9 @@ $("#results-container").on("click", ".player-card", function () {
         .then(() => render.renderPlayerStatistics(model.playerStatistics, staticticContainer));
 });
 // remove statistics player:
-$("#results-container").on("mouseout", ".player-card", function () {
+$("#results-container").on("dblclick", ".player-card", function () {
     const staticticContainerToRemove = $(this).find(".statistics-container");
-    render.removePlayerStatistics(staticticContainerToRemove);
+    setTimeout(() => {
+        render.removePlayerStatistics(staticticContainerToRemove);
+    }, 2500);
 });

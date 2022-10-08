@@ -19,7 +19,6 @@ class Model {
             const checkbox_input = document.getElementById("checkbox");
             let URL = `/players/${team}/${year}`;
             URL = (checkbox_input === null || checkbox_input === void 0 ? void 0 : checkbox_input.checked) ? URL + "?dateOfBirth=true" : URL;
-            console.log(URL);
             let playersData = yield $.get(URL);
             for (let i = 0; i < playersData.length; i++) {
                 this.players.push(new Player(playersData[i]["firstName"], playersData[i]["lastName"], playersData[i]["jersey"], playersData[i]["pos"]));
@@ -29,38 +28,28 @@ class Model {
     }
     addPlayerToDreamTeam(playerToAdd) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(playerToAdd);
             $.ajax({
                 url: "/dreamTeam",
                 type: "POST",
                 data: JSON.stringify(playerToAdd),
-                success: function () {
-                    console.log("post to server");
-                },
             });
         });
     }
     deletePlayerFromDreamTeam(playerToDelete) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(playerToDelete);
             $.ajax({
                 url: "/dreamTeam",
                 type: "DELETE",
                 data: JSON.stringify(playerToDelete),
-                success: function () {
-                    console.log("delete request to server");
-                },
             });
         });
     }
     getDreamTeam() {
         return __awaiter(this, void 0, void 0, function* () {
             let dreamTeamData = yield $.get("/dreamTeam");
-            console.log(dreamTeamData);
             for (let i = 0; i < dreamTeamData.length; i++) {
                 this.dreamTeam.push(new Player(dreamTeamData[i]["firstName"], dreamTeamData[i]["lastName"], dreamTeamData[i]["jerseyNumber"], dreamTeamData[i]["position"]));
             }
-            console.log(this.dreamTeam);
         });
     }
     getStatitsticsPlayer(lastName, firstName) {

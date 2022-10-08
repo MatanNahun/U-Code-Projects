@@ -16,7 +16,6 @@ class Model {
 
     let URL: string = `/players/${team}/${year}`;
     URL = checkbox_input?.checked ? URL + "?dateOfBirth=true" : URL;
-    console.log(URL);
 
     let playersData = await $.get(URL);
     for (let i = 0; i < playersData.length; i++) {
@@ -33,32 +32,23 @@ class Model {
   }
 
   async addPlayerToDreamTeam(playerToAdd: Player) {
-    console.log(playerToAdd);
     $.ajax({
       url: "/dreamTeam",
       type: "POST",
       data: JSON.stringify(playerToAdd),
-      success: function () {
-        console.log("post to server");
-      },
     });
   }
 
   async deletePlayerFromDreamTeam(playerToDelete: Player) {
-    console.log(playerToDelete);
     $.ajax({
       url: "/dreamTeam",
       type: "DELETE",
       data: JSON.stringify(playerToDelete),
-      success: function () {
-        console.log("delete request to server");
-      },
     });
   }
 
   async getDreamTeam() {
     let dreamTeamData = await $.get("/dreamTeam");
-    console.log(dreamTeamData);
     for (let i = 0; i < dreamTeamData.length; i++) {
       this.dreamTeam.push(
         new Player(
@@ -69,7 +59,6 @@ class Model {
         )
       );
     }
-    console.log(this.dreamTeam);
   }
 
   async getStatitsticsPlayer(lastName: string, firstName: string) {
