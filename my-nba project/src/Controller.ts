@@ -63,6 +63,8 @@ $("#results-dreamTeam-btn").on("click", function () {
 // statictic to console:
 $("#results-container").on("click", ".player-card", function () {
   const PLAYER_DETAIL = $(this).find(".player-detail");
+  const staticticContainer = $(this).find(".statistics-container");
+  console.log($(this).find(".statistics-container"));
 
   let firstName = String(PLAYER_DETAIL[0].textContent);
   let lastName = String(PLAYER_DETAIL[1].textContent);
@@ -73,5 +75,9 @@ $("#results-container").on("click", ".player-card", function () {
   console.log(firstNameLowerCase);
   console.log(lastNameLowerCase);
 
-  model.getStatitsticsPlayer(lastNameLowerCase, firstNameLowerCase);
+  model
+    .getStatitsticsPlayer(lastNameLowerCase, firstNameLowerCase)
+    .then(() =>
+      render.renderPlayerStatistics(model.playerStatistics, staticticContainer)
+    );
 });

@@ -12,6 +12,7 @@ class Model {
     constructor() {
         this.players = [];
         this.dreamTeam = [];
+        this.playerStatistics = {};
     }
     getPlayersData(team, year) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -66,6 +67,8 @@ class Model {
         return __awaiter(this, void 0, void 0, function* () {
             let statistics = yield $.get(`/players/stats/${lastName}/${firstName}`);
             console.log(statistics);
+            console.log(typeof statistics);
+            this.playerStatistics = statistics;
         });
     }
 }

@@ -1,10 +1,12 @@
 class Model {
   players: Player[];
   dreamTeam: Player[];
+  playerStatistics: {};
 
   constructor() {
     this.players = [];
     this.dreamTeam = [];
+    this.playerStatistics = {};
   }
 
   async getPlayersData(team: string, year: string) {
@@ -73,6 +75,8 @@ class Model {
   async getStatitsticsPlayer(lastName: string, firstName: string) {
     let statistics = await $.get(`/players/stats/${lastName}/${firstName}`);
     console.log(statistics);
+    console.log(typeof statistics);
+    this.playerStatistics = statistics;
   }
 }
 

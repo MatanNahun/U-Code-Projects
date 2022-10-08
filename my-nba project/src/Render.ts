@@ -14,4 +14,12 @@ class Render {
     $(".players-results").empty();
     $(".players-results").append(newHTML);
   }
+
+  renderPlayerStatistics(statistics: object, renderDestination: any): void {
+    const sourceStatistics = $("#statistics-template").html();
+    const template = Handlebars.compile(sourceStatistics);
+    let newHTML = template(statistics);
+    renderDestination.empty();
+    renderDestination.append(newHTML);
+  }
 }
