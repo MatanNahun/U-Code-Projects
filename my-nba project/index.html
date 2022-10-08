@@ -54,7 +54,7 @@
           <div class="player-detail">{{jerseyNumber}}</div>
           <img class="player-detail" id="profile-pic" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" onerror="this.src='https://cdn.vectorstock.com/i/preview-1x/75/58/default-placeholder-fitness-trainer-in-a-t-shirt-vector-20847558.webp'"  width="250" height="200" alt="player image" />
           <div class="player-detail">{{position}}</div>
-          <div class="statistics-container">statictics</div>
+          <div class="statistics-container"></div>
           <button class="add-to-dreamTeam-btn" type="add-to-dreamTeam-btn">add to dream team</button>
         </div>
       {{/each}}
@@ -69,7 +69,7 @@
           <div class="player-detail">{{jerseyNumber}}</div>
           <img class="player-detail" id="profile-pic" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" onerror="this.src='https://cdn.vectorstock.com/i/preview-1x/75/58/default-placeholder-fitness-trainer-in-a-t-shirt-vector-20847558.webp'"  width="250" height="200" alt="player image" />
           <div class="player-detail" >{{position}}</div>
-          <div class="statistics-container">statictics</div>
+          <div class="statistics-container"></div>
           <button class="delete-from-dreamTeam-btn" type="delete-from-dreamTeam-btn">delete from dream team</button>
         </div>
       {{/each}}
@@ -78,11 +78,11 @@
     <!-- script for statictics players cards -->
     <script id="statistics-template" type="text/x-handlebars-template">
         <div class="statistics-player-card">
-          <div class="player-statistic">{{assists_per_game}}</div>
-          <div class="player-statistic">{{games_played}}</div>
-          <div class="player-statistic">{{minutes_per_game}}</div>
-          <div class="player-statistic">{{points_per_game}}</div>
-          <div class="player-statistic">{{rebounds_per_game}}</div>
+          <div class="player-statistic">games played: {{games_played}}</div>
+          <div class="player-statistic">assist per game: {{assists_per_game}}</div>
+          <div class="player-statistic">minutes per game: {{minutes_per_game}}</div>
+          <div class="player-statistic">points per game: {{points_per_game}}</div>
+          <div class="player-statistic">rebounds pre game: {{rebounds_per_game}}</div>
         </div>
     </script>
 

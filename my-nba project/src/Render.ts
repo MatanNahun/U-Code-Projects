@@ -22,4 +22,8 @@ class Render {
     renderDestination.empty();
     renderDestination.append(newHTML);
   }
+
+  removePlayerStatistics(renderDestination: any): void {
+    renderDestination.empty();
+  }
 }

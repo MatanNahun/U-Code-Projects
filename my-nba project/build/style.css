@@ -43,6 +43,13 @@ body {
   font-size: 22px;
 }
 
+.statistics-container {
+  text-align: center;
+  font-family: "Allerta Stencil";
+  font-size: 14px;
+  margin: 2%;
+}
+
 img {
   background-color: #0049b7;
   border: 8px solid #ff8928;
