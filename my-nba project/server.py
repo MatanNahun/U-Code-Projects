@@ -85,12 +85,29 @@ def get_dream_team():
     return dream_team
 
 
+# @app.post("/dreamTeam")
+# async def add_player_to_dream_team(request: Request):
+#     new_player_dream_team = await request.json()
+#     print(new_player_dream_team)
+#     dream_team.append(new_player_dream_team)
+#     return "Created"
+
+
 @app.post("/dreamTeam")
 async def add_player_to_dream_team(request: Request):
+    global dream_team
     new_player_dream_team = await request.json()
-    print(new_player_dream_team)
+    updated_dream_team = [
+        player
+        for player in dream_team
+        if not (
+            player["firstName"] == new_player_dream_team["firstName"]
+            and player["lastName"] == new_player_dream_team["lastName"]
+        )
+    ]
+    dream_team = updated_dream_team
     dream_team.append(new_player_dream_team)
-    return "Created"
+    return dream_team
 
 
 @app.delete("/dreamTeam")

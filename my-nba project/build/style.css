@@ -102,7 +102,11 @@ img {
 }
 
 .add-to-dreamTeam-btn {
-  background-color: #a212f0;
+  background-color: #a44cfb;
+}
+
+.add-to-dreamTeam-btn:focus {
+  background-color: #561498;
 }
 
 .add-to-dreamTeam-btn:hover {
