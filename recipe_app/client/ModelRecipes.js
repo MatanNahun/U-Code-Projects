@@ -5,13 +5,6 @@ class ModelRecipes {
   }
 
   async getReciepesData(ingredient) {
-    // const checkbox_input = document.getElementById(
-    //   "checkbox"
-    // ) as HTMLInputElement;
-
-    // let URL: string = `/players/${team}/${year}`;
-    // URL = checkbox_input?.checked ? URL + "?dateOfBirth=true" : URL;
-
     let URL = `/recipes/${ingredient}`;
 
     let reciepesData = await $.get(URL);
@@ -27,6 +20,3 @@ class ModelRecipes {
     console.log(this.reciepes);
   }
 }
-console.log("hi");
-modelCheck = new ModelRecipes();
-modelCheck.getReciepesData("tomato");
