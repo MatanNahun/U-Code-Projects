@@ -51,9 +51,7 @@ def get_recipes_by_ingredient(ingredient, diet=None):
 
 def is_gluten_free():
     gluten_ingredient = get_gluten_ingredients()
-    print(gluten_ingredient)
-
-    #
+    return
 
 
 if __name__ == "__main__":
