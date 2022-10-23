@@ -53,8 +53,8 @@ def is_gluten_free():
     gluten_ingredient = get_gluten_ingredients()
     print(gluten_ingredient)
 
-    # if reciepe
+    #
 
 
 if __name__ == "__main__":
-    uvicorn.run("server:app", host="0.0.0.0", port=8080, reload=True)
+    uvicorn.run("server:app", host="0.0.0.0", port=8020, reload=True)

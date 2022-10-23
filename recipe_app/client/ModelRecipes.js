@@ -10,13 +10,31 @@ class ModelRecipes {
     let reciepesData = await $.get(URL);
     console.log(reciepesData);
     for (let i = 0; i < reciepesData.length; i++) {
-      this.reciepes.push({
-        ingredient: reciepesData[i]["ingredients"],
-        title: reciepesData[i]["title"],
-        thumbnail: reciepesData[i]["thumbnail"],
-        href: reciepesData[i]["href"],
-      });
+      this.reciepes.push(
+        new Reciepe(
+          reciepesData[i]["ingredients"],
+          reciepesData[i]["title"],
+          reciepesData[i]["thumbnail"],
+          reciepesData[i]["href"]
+        )
+      );
     }
     console.log(this.reciepes);
   }
+
+  //   async getReciepesData(ingredient) {
+  //     let URL = `/recipes/${ingredient}`;
+
+  //     let reciepesData = await $.get(URL);
+  //     console.log(reciepesData);
+  //     for (let i = 0; i < reciepesData.length; i++) {
+  //       this.reciepes.push({
+  //         ingredient: reciepesData[i]["ingredients"],
+  //         title: reciepesData[i]["title"],
+  //         thumbnail: reciepesData[i]["thumbnail"],
+  //         href: reciepesData[i]["href"],
+  //       });
+  //     }
+  //     console.log(this.reciepes);
+  //   }
 }
