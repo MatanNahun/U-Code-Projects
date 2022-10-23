@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi import Request, Response
 import requests
+from utils import get_gluten_ingredients
 import uvicorn
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -21,12 +22,38 @@ def sanity():
     return {"message": "Server is up and running in sanity"}
 
 
-@app.get("/recipes")
-def get_recipes_by_ingredient(ingredient):
-    recipes_by_ingredient = requests.get(
+@app.get("/recipes/{ingredient}")
+def get_recipes_by_ingredient(ingredient, diet=None):
+
+    recipes_by_ingredient_raw = requests.get(
         f"https://recipes-goodness.herokuapp.com/recipes/{ingredient}"
     )
-    return recipes_by_ingredient.json()
+    recipes_by_ingredient = recipes_by_ingredient_raw.json()["results"]
+
+    if diet == "gluten_free":
+        gluten_ingredients = get_gluten_ingredients()
+
+        recipes_gluten_free = []
+        for reciepe in recipes_by_ingredient:
+            for ingredient in reciepe["ingredients"]:
+                print(ingredient)
+                if ingredient in gluten_ingredients:
+                    print("true")
+                    break
+                else:
+                    recipes_gluten_free.append(reciepe)
+            return recipes_gluten_free
+
+        return recipes_gluten_free
+
+    return recipes_by_ingredient
+
+
+def is_gluten_free():
+    gluten_ingredient = get_gluten_ingredients()
+    print(gluten_ingredient)
+
+    # if reciepe
 
 
 if __name__ == "__main__":
