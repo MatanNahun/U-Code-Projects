@@ -1,5 +1,5 @@
 console.log("model");
-class model {
+class ModelRecipes {
   constructor() {
     this.reciepes = [];
   }
@@ -28,5 +28,5 @@ class model {
   }
 }
 console.log("hi");
-modelCheck = new model();
+modelCheck = new ModelRecipes();
 modelCheck.getReciepesData("tomato");

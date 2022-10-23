@@ -9,8 +9,36 @@
   </head>
   <body>
     <div class="title">hi</div>
-    <input type="text" input="ingridient" />
-    <button class="reciepe-btn" type="button">search recipes</button>
+    <input id="input-ingredient" type="text" input="ingridient" />
+    <button id="render-btn" class="reciepe-btn" type="button">
+      search recipes
+    </button>
+    <div id="results-container" class="reciepes-results"></div>
+
+    <!-- script for reciepes cards -->
+    <script id="results-template" type="text/x-handlebars-template">
+      {{#each reciepes}}
+        <div class="reciepe-card">
+          <div class="reciepe-detail">{{title}}</div>
+          <div class="reciepe-detail">{{ingredient}}</div>
+          <div class="reciepe-detail">{{thumbnail}}</div>
+          <div class="reciepe-detail">{{href}}</div>
+          <img
+            class="reciepe-detail"
+            id="profile-pic"
+            src="{{thumbnail}}"
+            onerror="this.src='https://cdn.vectorstock.com/i/preview-1x/75/58/default-placeholder-fitness-trainer-in-a-t-shirt-vector-20847558.webp'"
+            width="250"
+            height="200"
+            alt="player image"
+          />
+          <div class="player-detail">{{position}}</div>
+          <div class="statistics-container"></div>
+          <button class="add-to-dreamTeam-btn" type="add-to-dreamTeam-btn">add
+            to dream team</button>
+        </div>
+      {{/each}}
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
 
