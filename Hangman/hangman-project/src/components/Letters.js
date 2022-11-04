@@ -6,7 +6,7 @@ class Letters extends Component {
     return (
       <div>
         <div>Available Letters</div>
-        <Letter></Letter>
+        <Letter />
       </div>
     );
   }
