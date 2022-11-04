@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Letter extends Component {
   render() {
-    return <span>a</span>;
+    return <span>{this.props.letter}</span>;
   }
 }
 

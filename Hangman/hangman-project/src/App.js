@@ -9,6 +9,8 @@ class App extends Component {
     super();
     this.state = {
       letterStatus: this.generateLetterStatuses(),
+      solution: { word: "secret word", hint: "hint" },
+      score: 99,
     };
   }
 
@@ -23,9 +25,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Score />
-        <Solution />
-        <Letters />
+        <Score score={this.state.score} />
+        <Solution
+          letterStatus={this.state.letterStatus}
+          solution={this.state.solution}
+        />
+        <Letters letterStatus={this.state.letterStatus} />
       </div>
     );
   }

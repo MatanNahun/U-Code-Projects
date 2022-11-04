@@ -1,15 +1,16 @@
 import React, { Component } from "react";
+import Letter from "./Letter";
 
 class Solution extends Component {
   render() {
     return (
       <div>
-        <span>_ </span>
-        <span>_ </span>
-        <span>_ </span>
-        <span>_ </span>
-        <span>_ </span>
-        <div>your ideal mood when coding.</div>
+        <div>
+          {this.props.solution.word.split("").map((l) => (
+            <Letter letter={l}></Letter>
+          ))}
+          <div>{this.props.solution.hint}</div>
+        </div>
       </div>
     );
   }
