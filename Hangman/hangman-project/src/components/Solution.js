@@ -6,10 +6,18 @@ class Solution extends Component {
     return (
       <div>
         <div>
-          {this.props.solution.word.split("").map((l) => (
-            <Letter letter={l}></Letter>
-          ))}
-          <div>{this.props.solution.hint}</div>
+          {this.props.solution.word
+            .split("")
+            .map((l) =>
+              this.props.letterStatus[l] ? (
+                <Letter letter={l}></Letter>
+              ) : (
+                <Letter letter="_ "></Letter>
+              )
+            )}
+          <div>
+            <em>{this.props.solution.hint}</em>
+          </div>
         </div>
       </div>
     );

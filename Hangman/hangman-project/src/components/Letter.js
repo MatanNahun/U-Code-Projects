@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import "./Letter.css";
 
 class Letter extends Component {
   render() {
-    return <span>{this.props.letter}</span>;
+    return <span className={this.props.className}>{this.props.letter} </span>;
   }
 }
 
