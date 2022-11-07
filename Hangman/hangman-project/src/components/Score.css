@@ -1,0 +1,11 @@
+.high-score {
+  background-color: rgb(7, 127, 27);
+}
+
+.medium-score {
+  background-color: rgb(215, 215, 61);
+}
+
+.low-score {
+  background-color: rgb(255, 0, 4);
+}

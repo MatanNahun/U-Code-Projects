@@ -4,13 +4,16 @@ import Score from "./components/Score";
 import Solution from "./components/Solution";
 import Letters from "./components/Letters";
 
+const CORECT_LETTER_SCORE = 5;
+const WRONG_LETTER_SCORE = 20;
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       letterStatus: this.generateLetterStatuses(),
       solution: { word: "CALM", hint: "hint" },
-      score: 99,
+      score: 50,
     };
   }
 
@@ -27,7 +30,16 @@ class App extends Component {
     updateLetterStatus[letter] = true;
     this.setState({
       letterStatus: updateLetterStatus,
+      score: this.updateScore(letter),
     });
+  };
+
+  updateScore = (letter) => {
+    if (this.state.solution.word.includes(letter)) {
+      return this.state.score + CORECT_LETTER_SCORE;
+    } else {
+      return this.state.score - WRONG_LETTER_SCORE;
+    }
   };
 
   render() {
