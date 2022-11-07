@@ -9,9 +9,19 @@ class Letters extends Component {
         <div>Available letters:</div>
         {Object.keys(this.props.letterStatus).map((l, v) =>
           this.props.letterStatus[l] ? (
-            <Letter letter={l} key={v} className="chosen-letter" />
+            <Letter
+              selectLetter={this.props.selectLetter}
+              letter={l}
+              key={v}
+              className="chosen-letter"
+            />
           ) : (
-            <Letter letter={l} key={v} className="non-chosen-letter" />
+            <Letter
+              selectLetter={this.props.selectLetter}
+              letter={l}
+              key={v}
+              className="non-chosen-letter"
+            />
           )
         )}
       </div>
