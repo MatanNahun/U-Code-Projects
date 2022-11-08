@@ -2,7 +2,11 @@ import React, { Component } from "react";
 
 class EndGame extends Component {
   render() {
-    return <div> Congratulations </div>;
+    return (
+      <div>
+        {this.props.data} {this.props.word}
+      </div>
+    );
   }
 }
 
