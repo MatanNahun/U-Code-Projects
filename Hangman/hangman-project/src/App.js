@@ -40,13 +40,11 @@ class App extends Component {
 
   isWon = () => {
     for (let i = 0; i < this.state.solution.word.length; i++) {
-      console.log(this.state.solution.word[i]);
       if (this.state.letterStatus[this.state.solution.word[i]] === false) {
-        console.log("not won");
         return false;
       }
     }
-    console.log("won");
+
     return true;
   };
 
@@ -73,7 +71,7 @@ class App extends Component {
       <EndGame word={this.state.solution.word} data={LOSE_MESSAGE}></EndGame>
     );
     return (
-      <div>
+      <div className="App">
         <Score score={this.state.score} />
         <Solution
           letterStatus={this.state.letterStatus}
