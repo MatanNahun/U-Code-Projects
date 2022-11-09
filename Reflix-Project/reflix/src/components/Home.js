@@ -5,13 +5,12 @@ import User from "./User";
 class Home extends Component {
   render() {
     const users = this.props.users;
-    console.log(users);
 
     return (
       <div>
         <h1 id="users-title"></h1>
         <div id="users-container">
-          {users.map((user, key) => {
+          {users.map((user) => {
             return <User className="user" key={user.id} user={user}></User>;
           })}
         </div>

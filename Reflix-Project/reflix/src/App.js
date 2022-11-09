@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./components/Home.js";
+import Catalog from "./components/Catalog";
 
 class App extends Component {
   constructor() {
@@ -85,6 +86,11 @@ class App extends Component {
             exact
             path="/"
             render={() => <Home users={this.state.users} />}
+          />
+          <Route
+            exact
+            path="/catalog"
+            render={() => <Catalog movies={this.state.movies} />}
           />
         </div>
       </Router>
