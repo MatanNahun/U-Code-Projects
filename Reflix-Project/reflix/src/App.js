@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./components/Home.js";
 import Catalog from "./components/Catalog";
+import MovieDetail from "./components/MovieDetail";
 
 class App extends Component {
   constructor() {
@@ -91,6 +92,13 @@ class App extends Component {
             exact
             path="/catalog"
             render={() => <Catalog movies={this.state.movies} />}
+          />
+          <Route
+            path="/movies/:movieID"
+            exact
+            render={({ match }) => (
+              <MovieDetail match={match} movies={this.state.movies} />
+            )}
           />
         </div>
       </Router>
