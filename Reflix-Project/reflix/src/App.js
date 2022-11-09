@@ -1,14 +1,28 @@
 import React, { Component } from "react";
 import "./App.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Home from "./components/Home.js";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       users: [
-        { id: 0, name: "tom", img: "imgurlhere" },
-        { id: 1, name: "ohad", img: "imgurlhere" },
-        { id: 2, name: "matan", img: "imgurlhere" },
+        {
+          id: 0,
+          name: "tom",
+          img: "https://vignette.wikia.nocookie.net/disney-fan-fiction/images/4/42/Tarzan_2004_cover.jpg/revision/latest?cb=20140331030811",
+        },
+        {
+          id: 1,
+          name: "ohad",
+          img: "https://vignette.wikia.nocookie.net/disney-fan-fiction/images/4/42/Tarzan_2004_cover.jpg/revision/latest?cb=20140331030811",
+        },
+        {
+          id: 2,
+          name: "matan",
+          img: "https://vignette.wikia.nocookie.net/disney-fan-fiction/images/4/42/Tarzan_2004_cover.jpg/revision/latest?cb=20140331030811",
+        },
       ],
       movies: [
         {
@@ -61,9 +75,19 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">hi</header>
-      </div>
+      <Router>
+        <div className="App">
+          <div id="main-links">
+            <Link to="/">Home</Link>
+            <Link to="/catalog">Catalog</Link>
+          </div>
+          <Route
+            exact
+            path="/"
+            render={() => <Home users={this.state.users} />}
+          />
+        </div>
+      </Router>
     );
   }
 }
