@@ -9,15 +9,17 @@ class User extends Component {
     return (
       <div>
         <div>{userName}</div>
-        <div className="user-image">
-          <img
-            className="directory-img"
-            height="200"
-            width="200"
-            src={userImg}
-            alt="user-image"
-          />
-        </div>
+        <Link to="/catalog/">
+          <div className="user-image">
+            <img
+              className="directory-img"
+              height="200"
+              width="200"
+              src={userImg}
+              alt="user-image"
+            />
+          </div>
+        </Link>
       </div>
     );
   }

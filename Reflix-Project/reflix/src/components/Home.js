@@ -8,7 +8,7 @@ class Home extends Component {
 
     return (
       <div>
-        <h1 id="users-title"></h1>
+        <h1 id="users-title"> who's watching?</h1>
         <div id="users-container">
           {users.map((user) => {
             return <User className="user" key={user.id} user={user}></User>;

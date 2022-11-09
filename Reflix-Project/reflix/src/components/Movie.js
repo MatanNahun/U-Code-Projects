@@ -7,19 +7,23 @@ class Movie extends Component {
     const movie = this.props.movie;
     const movieTitle = this.props.movie.title;
     const movieImg = this.props.movie.img;
+    const movieID = this.props.movie.id;
+
     console.log(movie);
     return (
       <div>
         <div>{movieTitle}</div>
-        <div className="movie-image">
-          <img
-            className="directory-img"
-            height="200"
-            width="200"
-            src={movieImg}
-            alt="movie-image"
-          />
-        </div>
+        <Link to={`/movies/${movieID}`}>
+          <div className="movie-image">
+            <img
+              className="directory-img"
+              height="200"
+              width="200"
+              src={movieImg}
+              alt="movie-image"
+            />
+          </div>
+        </Link>
       </div>
     );
   }
