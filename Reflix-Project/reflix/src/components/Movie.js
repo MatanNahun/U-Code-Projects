@@ -24,6 +24,7 @@ class Movie extends Component {
             />
           </div>
         </Link>
+        <button>rent</button>
       </div>
     );
   }

@@ -38,7 +38,7 @@ class App extends Component {
         },
         {
           id: 1,
-          isRented: false,
+          isRented: true,
           title: "The Lion King",
           img: "https://img00.deviantart.net/b782/i/2006/207/e/7/the_lion_king_front_cd_cover_by_peachpocket285.jpg",
           year: 1994,
@@ -47,7 +47,7 @@ class App extends Component {
         },
         {
           id: 2,
-          isRented: false,
+          isRented: true,
           title: "Beauty and the Beast",
           year: 1991,
           img: "https://images-na.ssl-images-amazon.com/images/I/81etFyb9N-L._SL1500_.jpg",

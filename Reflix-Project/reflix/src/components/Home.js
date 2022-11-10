@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import User from "./User";
 
+import "../styles/Home.css";
+
 class Home extends Component {
   render() {
     const users = this.props.users;

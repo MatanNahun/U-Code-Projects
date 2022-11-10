@@ -9,8 +9,18 @@ class Catalog extends Component {
 
     return (
       <div>
-        <h1 id="movies-title"></h1>
-        <div id="movies-container">
+        <h1 id="movies-rented-title">rented:</h1>
+        <div id="movies-rented-container">
+          {movies
+            .filter((movie) => movie.isRented === true)
+            .map((movie) => {
+              return (
+                <Movie className="movie" key={movie.id} movie={movie}></Movie>
+              );
+            })}
+        </div>
+        <h1 id="movies-catalog-title">Catalog:</h1>
+        <div id="movies-catalog-container">
           {movies.map((movie) => {
             return (
               <Movie className="movie" key={movie.id} movie={movie}></Movie>

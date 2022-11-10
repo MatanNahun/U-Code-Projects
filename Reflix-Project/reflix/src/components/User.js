@@ -7,7 +7,7 @@ class User extends Component {
     const userName = this.props.user.name;
     const userImg = this.props.user.img;
     return (
-      <div>
+      <div className="user-card">
         <div>{userName}</div>
         <Link to="/catalog/">
           <div className="user-image">
