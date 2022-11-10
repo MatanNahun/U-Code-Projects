@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import "../styles/MovieDetail.css";
 
 class MovieDetail extends Component {
   render() {
@@ -8,8 +9,8 @@ class MovieDetail extends Component {
     const relevantMovie = movies.find((movie) => movie["id"] === movieID);
 
     return (
-      <div>
-        <div>
+      <div id="movieDetail">
+        <div className="title">
           {relevantMovie.title} {`(`}
           {relevantMovie.year}
           {`)`}{" "}

@@ -1,4 +1,4 @@
-#catalog {
+#movieDetail {
   /* background-image: url(https://wallpapertag.com/wallpaper/full/c/7/3/564392-most-popular-fantasy-nature-wallpaper-1920x1080.jpg); */
   background-image: url(https://gallery.yopriceville.com/var/albums/Backgrounds/Theater_Background.jpg?m=1414595400);
   height: 100%;
@@ -13,19 +13,20 @@
   z-index: -1;
 }
 
-#movies-catalog-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#movies-rented-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 * {
   text-decoration: none;
   font-family: "Cinzel Decorative";
+  font-size: x-large;
+
+  color: #34495e;
+  text-shadow: -1px -1px 0 #ecf0f1, 1px -1px 0 #ecf0f1, -1px 1px 0 #ecf0f1,
+    1px 1px 0 #ecf0f1;
+}
+
+.title {
+  margin: 50px;
+}
+
+.movie-description {
+  margin: 30px;
 }
