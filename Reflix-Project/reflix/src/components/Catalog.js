@@ -7,7 +7,6 @@ import "../styles/Catalog.css";
 class Catalog extends Component {
   render() {
     const movies = this.props.movies;
-    console.log(movies);
 
     return (
       <div>
@@ -17,7 +16,12 @@ class Catalog extends Component {
             .filter((movie) => movie.isRented === true)
             .map((movie) => {
               return (
-                <Movie className="movie" key={movie.id} movie={movie}></Movie>
+                <Movie
+                  className="movie"
+                  key={movie.id}
+                  movie={movie}
+                  removeMovie={this.props.removeMovie}
+                ></Movie>
               );
             })}
         </div>
@@ -25,7 +29,12 @@ class Catalog extends Component {
         <div id="movies-catalog-container">
           {movies.map((movie) => {
             return (
-              <Movie className="movie" key={movie.id} movie={movie}></Movie>
+              <Movie
+                className="movie"
+                key={movie.id}
+                movie={movie}
+                rentMovie={this.props.rentMovie}
+              ></Movie>
             );
           })}
         </div>

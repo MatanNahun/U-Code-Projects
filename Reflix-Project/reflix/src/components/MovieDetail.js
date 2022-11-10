@@ -6,10 +6,7 @@ class MovieDetail extends Component {
     const movies = this.props.movies;
     const movieID = parseInt(this.props.match.params.movieID);
     const relevantMovie = movies.find((movie) => movie["id"] === movieID);
-    console.log(movies);
-    console.log(movieID);
-    console.log(relevantMovie);
-    // const relevantMovie = movies[]
+
     return (
       <div>
         <div>
