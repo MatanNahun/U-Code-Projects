@@ -10,7 +10,25 @@ class MovieDetail extends Component {
     console.log(movieID);
     console.log(relevantMovie);
     // const relevantMovie = movies[]
-    return <div>{relevantMovie.title}</div>;
+    return (
+      <div>
+        <div>
+          {relevantMovie.title} {`(`}
+          {relevantMovie.year}
+          {`)`}{" "}
+        </div>
+        <div>
+          <img
+            className="movie-detail-img"
+            height="300"
+            width="300"
+            src={relevantMovie.img}
+            alt="movie-image"
+          />
+        </div>
+        <div className="movie-description">{relevantMovie.descrShort}</div>
+      </div>
+    );
   }
 }
 
