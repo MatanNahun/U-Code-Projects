@@ -9,7 +9,7 @@ class Catalog extends Component {
     const movies = this.props.movies;
 
     return (
-      <div>
+      <div id="catalog">
         <h1 id="movies-rented-title">rented:</h1>
         <div id="movies-rented-container">
           {movies

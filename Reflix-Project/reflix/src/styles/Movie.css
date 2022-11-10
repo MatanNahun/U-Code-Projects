@@ -1,4 +1,13 @@
 div.movie-card {
-  background-color: rgb(233, 233, 55);
+  background-color: rgb(0 0 0 / 54%);
   margin: 2%;
+}
+
+* {
+  text-decoration: none;
+  font-family: "Cinzel Decorative";
+  text-shadow: -1px -1px 0 #ecf0f1, 1px -1px 0 #ecf0f1, -1px 1px 0 #ecf0f1,
+    1px 1px 0 #ecf0f1;
+  /* margin: 10px; */
+  color: #34495e;
 }

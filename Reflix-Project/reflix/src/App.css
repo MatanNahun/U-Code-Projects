@@ -1,3 +1,18 @@
 .App {
   text-align: center;
+  /* background-color: blueviolet; */
+}
+
+#main-links > a {
+  display: flex;
+  margin: 10px;
+  color: #34495e;
+  text-shadow: -1px -1px 0 #ecf0f1, 1px -1px 0 #ecf0f1, -1px 1px 0 #ecf0f1,
+    1px 1px 0 #ecf0f1;
+  text-align: left;
+}
+
+* {
+  text-decoration: none;
+  font-family: "Cinzel Decorative";
 }
