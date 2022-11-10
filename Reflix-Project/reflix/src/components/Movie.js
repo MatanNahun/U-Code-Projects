@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import "../styles/User.css";
-
+// import "../styles/User.css";
+import "../styles/Movie.css";
 class Movie extends Component {
   render() {
     const movie = this.props.movie;
@@ -11,7 +11,7 @@ class Movie extends Component {
 
     console.log(movie);
     return (
-      <div>
+      <div className="movie-card">
         <div>{movieTitle}</div>
         <Link to={`/movies/${movieID}`}>
           <div className="movie-image">
@@ -20,7 +20,7 @@ class Movie extends Component {
               height="200"
               width="200"
               src={movieImg}
-              alt="movie-image"
+              alt="movie"
             />
           </div>
         </Link>

@@ -75,6 +75,9 @@ class App extends Component {
       ],
     };
   }
+
+  rentMovie = (movie) => {};
+
   render() {
     return (
       <Router>

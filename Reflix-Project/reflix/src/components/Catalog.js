@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import Movie from "./Movie";
 
+import "../styles/Catalog.css";
+
 class Catalog extends Component {
   render() {
     const movies = this.props.movies;

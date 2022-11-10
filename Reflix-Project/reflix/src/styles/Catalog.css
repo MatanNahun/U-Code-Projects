@@ -1,0 +1,11 @@
+#movies-catalog-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#movies-rented-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
