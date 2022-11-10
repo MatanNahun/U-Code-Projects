@@ -13,17 +13,17 @@ class App extends Component {
         {
           id: 0,
           name: "tom",
-          img: "https://vignette.wikia.nocookie.net/disney-fan-fiction/images/4/42/Tarzan_2004_cover.jpg/revision/latest?cb=20140331030811",
+          img: "https://cdn-icons-png.flaticon.com/512/147/147144.png",
         },
         {
           id: 1,
           name: "ohad",
-          img: "https://vignette.wikia.nocookie.net/disney-fan-fiction/images/4/42/Tarzan_2004_cover.jpg/revision/latest?cb=20140331030811",
+          img: "https://cdn-icons-png.flaticon.com/512/194/194938.png",
         },
         {
           id: 2,
           name: "matan",
-          img: "https://vignette.wikia.nocookie.net/disney-fan-fiction/images/4/42/Tarzan_2004_cover.jpg/revision/latest?cb=20140331030811",
+          img: "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png",
         },
       ],
       movies: [

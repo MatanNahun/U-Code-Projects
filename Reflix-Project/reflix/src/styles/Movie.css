@@ -8,6 +8,5 @@ div.movie-card {
   font-family: "Cinzel Decorative";
   text-shadow: -1px -1px 0 #ecf0f1, 1px -1px 0 #ecf0f1, -1px 1px 0 #ecf0f1,
     1px 1px 0 #ecf0f1;
-  /* margin: 10px; */
   color: #34495e;
 }
