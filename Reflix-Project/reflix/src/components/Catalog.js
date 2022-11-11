@@ -16,6 +16,7 @@ class Catalog extends Component {
           filterSearchTerm={filterSearchTerm}
           handleInputSearch={this.props.handleInputSearch}
         ></Search>
+        <div>Budget: ${this.props.budget}</div>
         <h1 id="movies-rented-title">rented:</h1>
         <div id="movies-rented-container">
           {movies
