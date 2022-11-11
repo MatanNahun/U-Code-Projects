@@ -9,7 +9,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      budget: 12,
+      budget: 9,
       filterSearchTerm: "",
       users: [
         {
@@ -81,9 +81,13 @@ class App extends Component {
   rentMovie = (movieID) => {
     let updateMovie = [...this.state.movies];
     updateMovie[movieID].isRented = true;
+    if (this.state.budget - 3 < 0) {
+      alert("you cant afford this");
+      return;
+    }
     this.setState({
-      movies: updateMovie,
       budget: this.state.budget - 3,
+      movies: updateMovie,
     });
   };
 
