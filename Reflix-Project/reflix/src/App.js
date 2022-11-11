@@ -87,12 +87,12 @@ class App extends Component {
   }
 
   rentMovie = (movieID) => {
-    let updateMovie = [...this.state.movies];
-    updateMovie[movieID].isRented = true;
     if (this.state.budget - MOVIE_PRICE < ZERO_MONEY) {
       alert(ALERT_MESSAGE_WHEN_NO_MONEY);
       return;
     }
+    let updateMovie = [...this.state.movies];
+    updateMovie[movieID].isRented = true;
     this.setState({
       budget: this.state.budget - MOVIE_PRICE,
       movies: updateMovie,
