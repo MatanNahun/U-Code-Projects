@@ -19,7 +19,13 @@ class Catalog extends Component {
         <h1 id="movies-rented-title">rented:</h1>
         <div id="movies-rented-container">
           {movies
-            .filter((movie) => movie.isRented === true)
+            .filter(
+              (movie) =>
+                movie.isRented === true &&
+                movie.title
+                  .toLowerCase()
+                  .includes(filterSearchTerm.toLowerCase())
+            )
             .map((movie) => {
               return (
                 <Movie
