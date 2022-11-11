@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
 import Movie from "./Movie";
 
 import "../styles/Catalog.css";
@@ -57,7 +56,7 @@ class Catalog extends Component {
           filterSearchTerm={filterSearchTerm}
           handleInputSearch={this.props.handleInputSearch}
         ></Search>
-        <div>Budget: ${this.props.budget}</div>
+        <div className="budget">Budget: ${this.props.budget}</div>
         <h1 id="movies-rented-title">rented:</h1>
         <div id="movies-rented-container">{this.renderRentedMovies()}</div>
         <h1 id="movies-catalog-title">Catalog:</h1>
