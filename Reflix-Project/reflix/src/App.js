@@ -11,6 +11,7 @@ const ALERT_MESSAGE_WHEN_NO_MONEY =
 
 const MOVIE_PRICE = 3;
 const INITIAL_FILTERSEARCHTERM_STATE = "";
+const ZERO_MONEY = 0;
 
 class App extends Component {
   constructor() {
@@ -88,7 +89,7 @@ class App extends Component {
   rentMovie = (movieID) => {
     let updateMovie = [...this.state.movies];
     updateMovie[movieID].isRented = true;
-    if (this.state.budget - MOVIE_PRICE < 0) {
+    if (this.state.budget - MOVIE_PRICE < ZERO_MONEY) {
       alert(ALERT_MESSAGE_WHEN_NO_MONEY);
       return;
     }
