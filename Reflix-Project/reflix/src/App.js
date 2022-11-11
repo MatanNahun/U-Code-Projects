@@ -5,12 +5,19 @@ import Home from "./components/Home.js";
 import Catalog from "./components/Catalog";
 import MovieDetail from "./components/MovieDetail";
 
+const INITIAL_BUDGET = 9;
+const ALERT_MESSAGE_WHEN_NO_MONEY =
+  "you cant afford this, please deposit more money into the account";
+
+const MOVIE_PRICE = 3;
+const INITIAL_FILTERSEARCHTERM_STATE = "";
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      budget: 9,
-      filterSearchTerm: "",
+      budget: INITIAL_BUDGET,
+      filterSearchTerm: INITIAL_FILTERSEARCHTERM_STATE,
       users: [
         {
           id: 0,
@@ -81,12 +88,12 @@ class App extends Component {
   rentMovie = (movieID) => {
     let updateMovie = [...this.state.movies];
     updateMovie[movieID].isRented = true;
-    if (this.state.budget - 3 < 0) {
-      alert("you cant afford this");
+    if (this.state.budget - MOVIE_PRICE < 0) {
+      alert(ALERT_MESSAGE_WHEN_NO_MONEY);
       return;
     }
     this.setState({
-      budget: this.state.budget - 3,
+      budget: this.state.budget - MOVIE_PRICE,
       movies: updateMovie,
     });
   };
@@ -96,7 +103,7 @@ class App extends Component {
     updateMovie[movieID].isRented = false;
     this.setState({
       movies: updateMovie,
-      budget: this.state.budget + 3,
+      budget: this.state.budget + MOVIE_PRICE,
     });
   };
 
