@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-// import "../styles/User.css";
 import "../styles/Movie.css";
 class Movie extends Component {
   rentMovie = () => {

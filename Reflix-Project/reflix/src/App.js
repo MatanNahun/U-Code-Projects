@@ -9,6 +9,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      filterSearchTerm: "",
       users: [
         {
           id: 0,
@@ -92,6 +93,12 @@ class App extends Component {
     });
   };
 
+  handleInputSearch = (event) => {
+    let inputValue = event.target.value;
+    this.setState({ filterSearchTerm: inputValue });
+    console.log(inputValue);
+  };
+
   render() {
     return (
       <Router>
@@ -113,6 +120,8 @@ class App extends Component {
                 rentMovie={this.rentMovie}
                 removeMovie={this.removeMovie}
                 movies={this.state.movies}
+                filterSearchTerm={this.state.filterSearchTerm}
+                handleInputSearch={this.handleInputSearch}
               />
             )}
           />
