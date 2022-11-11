@@ -3,6 +3,11 @@ div.movie-card {
   margin: 2%;
 }
 
+div.movie-card:hover {
+  color: white;
+  background-color: black;
+}
+
 * {
   text-decoration: none;
   font-family: "Cinzel Decorative";
